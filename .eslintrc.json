@@ -1,3 +1,138 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:storybook/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "react",
+    "import",
+    "@typescript-eslint",
+    "prettier",
+    "react-hooks"
+  ],
+  "rules": {
+    "@typescript-eslint/dot-notation": [
+      "error",
+      {
+        "allowPattern": "^[a-z]+(__[a-z]+)+$"
+      }
+    ],
+    "@typescript-eslint/no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true
+      }
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "import/newline-after-import": [
+      "error",
+      {
+        "count": 1
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "external",
+          "builtin",
+          "internal",
+          "sibling",
+          "parent",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "components",
+            "group": "internal"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "../**",
+            "group": "parent"
+          },
+          {
+            "pattern": "./**",
+            "group": "index"
+          },
+          {
+            "pattern": "**.scss",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "react"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "linebreak-style": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.stories.*"
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off"
+      }
+    },
+    {
+      "files": [
+        "next.config.js"
+      ],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }
