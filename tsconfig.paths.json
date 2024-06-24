@@ -7,7 +7,8 @@
       "@/widgets/*": ["./src/3_widgets/*"],
       "@/features/*": ["./src/4_features/*"],
       "@/entities/*": ["./src/5_entities/*"],
-      "@/shared/*": ["./src/6_shared/*"]
+      "@/shared/*": ["./src/6_shared/*"],
+      "@/styles/*": ["./src/styles/*"]
     }
   }
 }

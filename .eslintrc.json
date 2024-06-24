@@ -14,9 +14,10 @@
     "ecmaFeatures": {
       "jsx": true
     },
+    "tsconfigRootDir": "src",
     "ecmaVersion": 2018,
     "sourceType": "module",
-    "project": "./tsconfig.json"
+    "project": ["**/tsconfig.json"]
   },
   "plugins": [
     "react",
@@ -41,10 +42,7 @@
     "no-console": [
       "warn",
       {
-        "allow": [
-          "warn",
-          "error"
-        ]
+        "allow": ["warn", "error"]
       }
     ],
     "import/newline-after-import": [
@@ -98,9 +96,7 @@
             "position": "after"
           }
         ],
-        "pathGroupsExcludedImportTypes": [
-          "react"
-        ],
+        "pathGroupsExcludedImportTypes": ["react"],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc",
@@ -118,18 +114,14 @@
   },
   "overrides": [
     {
-      "files": [
-        "**/*.stories.*"
-      ],
+      "files": ["**/*.stories.*"],
       "rules": {
         "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off"
       }
     },
     {
-      "files": [
-        "next.config.js"
-      ],
+      "files": ["next.config.js"],
       "rules": {
         "@typescript-eslint/no-var-requires": "off"
       }
