@@ -1,24 +1,30 @@
 import React from "react";
 
-import styles from './PageTabMenu.module.scss'
+import styles from "./PageTabMenu.module.scss";
 import classNames from "classnames";
 
 type PropsPageTabMenu = {
-    onClick?: () => void
-    active?: boolean
-    title: string
-}
+  onClick?: () => void;
+  active?: boolean;
+  title: string;
+};
 
 export default function PageTabMenu(props: PropsPageTabMenu) {
+  const classPageTabMenu = classNames({
+    [styles["page-tab-menu"]]: !props.active,
+    [styles["page-tab-menu--active"]]: props.active,
+  });
 
-    const classPageTabMenu = classNames({
-        [styles["page-tab-menu"]]: !props.active,
-        [styles["page-tab-menu--active"]]: props.active,
-    })
+  const handlerPageTabMenu = () => {
+    if (props.active) {
+      return;
+    }
+    props.onClick?.();
+  };
 
-    return (
-        <div onClick={props.onClick} className={classPageTabMenu}>
-            {props.title}
-        </div>
-    )
+  return (
+    <div onClick={handlerPageTabMenu} className={classPageTabMenu}>
+      {props.title}
+    </div>
+  );
 }
