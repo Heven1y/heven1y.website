@@ -1,5 +1,5 @@
 import App from "@/pages/App";
-import "@/styles/reset.scss";
+import "@/shared/styles/reset.scss";
 import { appWithTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 

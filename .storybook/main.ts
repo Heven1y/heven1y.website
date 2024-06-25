@@ -14,10 +14,7 @@ const config = {
   docs: {
     autodocs: "tag",
   },
-  core: {
-    builder: "@storybook/builder-vite",
-  },
-  viteFinal: async (config) => {
+  webpackFinal: async (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       "next-i18next": "react-i18next",
