@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useTranslation } from "next-i18next";
 
-import { poppins } from "@/styles/fonts";
+import { poppins } from "@/shared/styles/fonts";
 
 export default function App({ Component, pageProps }: AppProps) {
   const { t } = useTranslation("pages.App");
