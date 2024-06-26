@@ -5,6 +5,7 @@ import Head from "next/head";
 import { useTranslation } from "next-i18next";
 
 import { poppins } from "@/shared/styles/fonts";
+import { NextUIProvider } from "@nextui-org/react";
 
 export default function App({ Component, pageProps }: AppProps) {
   const { t } = useTranslation("pages.App");
@@ -47,8 +48,9 @@ export default function App({ Component, pageProps }: AppProps) {
           font-family: ${poppins.style.fontFamily};
         }
       `}</style>
-
-      <Component {...pageProps} />
+      <NextUIProvider>
+        <Component {...pageProps} />
+      </NextUIProvider>
     </>
   );
 }

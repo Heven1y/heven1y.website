@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from "./PageTabMenu.module.scss";
 import classNames from "classnames";
+import { Button } from "@nextui-org/react";
 
 type PropsPageTabMenu = {
   onClick?: () => void;
@@ -15,16 +16,14 @@ export default function PageTabMenu(props: PropsPageTabMenu) {
     [styles["page-tab-menu--active"]]: props.active,
   });
 
-  const handlerPageTabMenu = () => {
-    if (props.active) {
-      return;
-    }
-    props.onClick?.();
-  };
-
   return (
-    <div onClick={handlerPageTabMenu} className={classPageTabMenu}>
+    <Button
+      variant="light"
+      onClick={props.onClick}
+      className={classPageTabMenu}
+      isDisabled={props.active}
+    >
       {props.title}
-    </div>
+    </Button>
   );
 }
