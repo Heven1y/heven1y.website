@@ -1,7 +1,6 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Select from "./index";
-import { defaultBackgroundColorStorybook } from "@/shared/styles/storybookStyles";
 import { Button } from "@nextui-org/react";
 import { LANGUAGES } from "@/shared/config/constants";
 
@@ -10,11 +9,7 @@ export default {
   component: Select,
 } as Meta;
 
-const Template: StoryFn<typeof Select> = (args) => (
-  <div style={defaultBackgroundColorStorybook}>
-    <Select {...args} />
-  </div>
-);
+const Template: StoryFn<typeof Select> = (args) => <Select {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
