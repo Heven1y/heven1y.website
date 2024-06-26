@@ -5,6 +5,8 @@ import type { Preview } from "@storybook/react";
 
 import i18n from "./i18next";
 import React from "react";
+import { NextUIProvider } from "@nextui-org/react";
+import "../src/6_shared/styles/tailwind.css";
 
 const decorators = [
   (Story, context) => {
@@ -15,11 +17,13 @@ const decorators = [
     }, [locale]);
 
     return (
-      <I18nextProvider i18n={i18n}>
-        <Story/>
-      </I18nextProvider>
-    )
-  }
+      <NextUIProvider>
+        <I18nextProvider i18n={i18n}>
+          <Story />
+        </I18nextProvider>
+      </NextUIProvider>
+    );
+  },
 ];
 
 const preview: Preview = {
@@ -28,19 +32,18 @@ const preview: Preview = {
       router: {
         locale: "en",
         basePath: "/",
-        isReady: true
+        isReady: true,
       },
-      appDirectory: true
     },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/
-      }
-    }
+        date: /Date$/,
+      },
+    },
   },
-  decorators
+  decorators,
 };
 
 export const globalTypes = {
@@ -60,4 +63,3 @@ export const globalTypes = {
 };
 
 export default preview;
-
