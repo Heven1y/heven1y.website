@@ -1,3 +1,6 @@
+import tsconfigPaths from "vite-tsconfig-paths";
+import path from "path";
+
 const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -11,13 +14,20 @@ const config = {
     name: "@storybook/nextjs",
     options: {},
   },
+  core: {
+    builder: "@storybook/builder-vite",
+  },
   docs: {
     autodocs: "tag",
   },
-  webpackFinal: async (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      "next-i18next": "react-i18next",
+  viteFinal: async (config) => {
+    config.plugins.push(
+      tsconfigPaths({
+        projects: [path.resolve(path.dirname(__dirname), "tsconfig.json")],
+      })
+    );
+    config.define = {
+      "process.env": {},
     };
     return config;
   },

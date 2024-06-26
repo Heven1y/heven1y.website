@@ -1,7 +1,6 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import PageTabMenu from "./index";
-import { defaultBackgroundColorStorybook } from "@/shared/styles/storybookStyles";
 
 export default {
   title: "Shared/PageTabMenu",
@@ -9,9 +8,7 @@ export default {
 } as Meta;
 
 const Template: StoryFn<typeof PageTabMenu> = (args) => (
-  <div style={defaultBackgroundColorStorybook}>
-    <PageTabMenu {...args} />
-  </div>
+  <PageTabMenu {...args} />
 );
 
 export const Primary = Template.bind({});

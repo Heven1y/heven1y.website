@@ -1,7 +1,6 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import LinkButton from "./index";
-import { defaultBackgroundColorStorybook } from "@/shared/styles/storybookStyles";
 import LinkedInIcon from "@/shared/icons/LinkedIn";
 import GitHubIcon from "@/shared/icons/GitHub";
 import TelegramIcon from "@/shared/icons/Telegram";
@@ -12,11 +11,7 @@ export default {
   component: LinkButton,
 } as Meta;
 
-const Template: StoryFn<typeof LinkButton> = (args) => (
-  <div style={defaultBackgroundColorStorybook}>
-    <LinkButton {...args} />
-  </div>
-);
+const Template: StoryFn<typeof LinkButton> = (args) => <LinkButton {...args} />;
 
 export const LinkedIn = Template.bind({});
 

@@ -11,6 +11,8 @@
     padding: 0 10px;
     border-radius: $border-radius;
     border: rgba(0, 0, 0, 0) solid 1px;
+    min-width: auto;
+    gap: 5px;
 
     &:hover {
         background-color: $bg-color;
