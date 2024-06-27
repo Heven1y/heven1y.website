@@ -1,0 +1,37 @@
+.header {
+    width: 100vw;
+    padding: 0 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.header__logo {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: fit-content;
+}
+
+.header__tabs {
+    display: flex;
+    width: fit-content;
+    gap: 10px;
+    height: fit-content;
+    flex-shrink: 0;
+}
+
+.header__actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.header__links {
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+}
