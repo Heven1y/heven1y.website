@@ -1,0 +1,9 @@
+{
+  "hello": "Hello!",
+  "name": "My name is <strong>Semyon Bizin</strong>",
+  "aboutMe": {
+    "first": "And I am Frontend developer",
+    "second": "And I am Designer",
+    "third": "And I am just good person"
+  }
+}
