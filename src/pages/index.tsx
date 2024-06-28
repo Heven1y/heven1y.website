@@ -6,6 +6,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
     "pages.App",
     "widgets.Header",
     "entities.Preview",
+    "entities.Whoami",
   ]);
 
   return {

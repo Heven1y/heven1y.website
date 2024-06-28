@@ -40,8 +40,6 @@ export default function Preview() {
         <TypeAnimation
           className={styles["preview__text"]}
           sequence={[
-            (el) => el!.classList.add(styles["preview__text--animation"]),
-            3000,
             (el) => el!.classList.remove(styles["preview__text--animation"]),
             `${t("hello")}\n${t("name")}\n${t("aboutMe.first")}`,
             (el) => el!.classList.add(styles["preview__text--animation"]),
@@ -52,11 +50,13 @@ export default function Preview() {
             3000,
             (el) => el!.classList.remove(styles["preview__text--animation"]),
             `${t("hello")}\n${t("name")}\n${t("aboutMe.third")}`,
-            0,
+            (el) => el!.classList.add(styles["preview__text--animation"]),
+            3000,
           ]}
           speed={30}
           repeat={Infinity}
           cursor={false}
+          wrapper="h1"
         />
       ) : (
         <></>
