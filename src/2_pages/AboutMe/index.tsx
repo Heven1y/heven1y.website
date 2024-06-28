@@ -5,17 +5,19 @@ import { TABS } from "@/widgets/header/model/enums";
 import Header from "@/widgets/header/ui/Header";
 
 import styles from "./AboutMe.module.scss";
+import Whoami from "@/entities/whoami/ui/Whoami";
 
 export default function AboutMe() {
   return (
     <>
       <div className={styles["wrapper__light"]} />
-      <div className={styles["wrapper__preview"]}>
-        <Container>
+      <Container>
+        <div className={styles["wrapper__preview"]}>
           <Header activeTabId={TABS.about} />
           <Preview />
-        </Container>
-      </div>
+        </div>
+        <Whoami />
+      </Container>
     </>
   );
 }
