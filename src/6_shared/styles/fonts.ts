@@ -1,44 +1,44 @@
 import localFont from "next/font/local";
 
-export const poppins = localFont({
+export const raleway = localFont({
   src: [
     {
-      path: "../../../public/font/Poppins-Black.ttf",
+      path: "../../../public/font/Raleway-Black.ttf",
       weight: "900",
     },
     {
-      path: "../../../public/font/Poppins-ExtraBold.ttf",
+      path: "../../../public/font/Raleway-ExtraBold.ttf",
       weight: "800",
     },
     {
-      path: "../../../public/font/Poppins-Bold.ttf",
+      path: "../../../public/font/Raleway-Bold.ttf",
       weight: "700",
     },
     {
-      path: "../../../public/font/Poppins-SemiBold.ttf",
+      path: "../../../public/font/Raleway-SemiBold.ttf",
       weight: "600",
     },
     {
-      path: "../../../public/font/Poppins-Medium.ttf",
+      path: "../../../public/font/Raleway-Medium.ttf",
       weight: "500",
     },
     {
-      path: "../../../public/font/Poppins-Regular.ttf",
+      path: "../../../public/font/Raleway-Regular.ttf",
       weight: "400",
     },
     {
-      path: "../../../public/font/Poppins-Light.ttf",
+      path: "../../../public/font/Raleway-Light.ttf",
       weight: "300",
     },
     {
-      path: "../../../public/font/Poppins-ExtraLight.ttf",
+      path: "../../../public/font/Raleway-ExtraLight.ttf",
       weight: "200",
     },
     {
-      path: "../../../public/font/Poppins-Thin.ttf",
+      path: "../../../public/font/Raleway-Thin.ttf",
       weight: "100",
     },
   ],
-  variable: "--poppins-font",
-  fallback: ["Poppins", "sans-serif"],
+  variable: "--raleway-font",
+  fallback: ["Raleway", "sans-serif"],
 });
