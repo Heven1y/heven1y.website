@@ -1,6 +1,7 @@
 {
   "hello": "Hello!",
-  "name": "My name is Semyon Bizin",
+  "preName": "My name is ",
+  "name": "Semyon Bizin",
   "aboutMe": {
     "first": "And I am Frontend developer",
     "second": "And I am Designer",
