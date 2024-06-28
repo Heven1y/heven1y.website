@@ -9,7 +9,7 @@ import React from "react";
 
 import styles from "./Header.module.scss";
 import SelectLanguage from "@/features/languageSwitcher/ui/SelectLanguage";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { LINKS, TABS } from "../../model/enums";
 import { useRouter } from "next/router";
 

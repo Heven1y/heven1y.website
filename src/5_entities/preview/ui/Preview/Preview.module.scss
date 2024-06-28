@@ -1,20 +1,30 @@
 @import "../../../../6_shared/styles/constant.scss";
 
 .preview {
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding: 60px 80px;
+  z-index: 1;
 }
 
 .preview__text {
   @extend .font-display-1;
   white-space: pre-line;
-  text-align: center;
+  text-align: left;
+  line-height: 7rem;
+  width: 100%;
 
+  &::after {
+    content: '❚';
+  }
+}
+
+.preview__text--animation {
   &::after {
     content: '❚';
     animation: cursor 3.5s ease 0s infinite normal none;
