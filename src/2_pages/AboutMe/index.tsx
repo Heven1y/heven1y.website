@@ -6,6 +6,7 @@ import Header from "@/widgets/header/ui/Header";
 
 import styles from "./AboutMe.module.scss";
 import Whoami from "@/entities/whoami/ui/Whoami";
+import MySkills from "@/entities/mySkills/ui/MySkills";
 
 export default function AboutMe() {
   return (
@@ -17,6 +18,7 @@ export default function AboutMe() {
           <Preview />
         </div>
         <Whoami />
+        <MySkills />
       </Container>
     </>
   );

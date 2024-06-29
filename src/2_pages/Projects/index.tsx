@@ -10,12 +10,12 @@ export default function Projects() {
   const { t } = useTranslation("pages.Projects");
   return (
     <div className={styles["wrapper"]}>
-      <div className={styles["wrapper__preview"]}>
-        <Header activeTabId={TABS.projects} />
-        <Container>
+      <Container>
+        <div className={styles["wrapper__preview"]}>
+          <Header activeTabId={TABS.projects} />
           <div className={styles["wrapper__temp"]}>{t("temp")}</div>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </div>
   );
 }

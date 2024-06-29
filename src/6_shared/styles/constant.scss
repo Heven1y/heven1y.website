@@ -2,6 +2,7 @@ $primary: #A0A0A0;
 $bg-color: #121316;
 $bloom: #DFDFDF;
 $divider: #353535;
+$skill-bg: #151619;
 
 $border-radius: 8px;
 $inner-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.25) inset;
@@ -24,4 +25,10 @@ $inner-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.25) inset;
 .font-header-1 {
     font-size: 3rem;
     font-weight: 600;
+}
+
+.font-header-2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
