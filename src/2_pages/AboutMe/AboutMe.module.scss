@@ -1,0 +1,22 @@
+@import '../../6_shared/styles/constant.scss';
+
+.wrapper__preview {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.wrapper__light {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  transform-origin: center;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 1000px;
+  border: 1px solid #000;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.50) 0%, rgba(20, 19, 19, 0.50) 41.5%, rgba(222, 222, 222, 0.50) 100%);
+  filter: blur(50px);
+}

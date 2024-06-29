@@ -1,0 +1,7 @@
+.sb-show-main.sb-main-padded {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+}

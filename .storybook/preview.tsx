@@ -1,25 +1,18 @@
-import { useEffect } from "react";
-
-import { I18nextProvider } from "react-i18next";
 import type { Preview } from "@storybook/react";
 
-import i18n from "./i18next";
 import React from "react";
+import { NextUIProvider } from "@nextui-org/react";
+import "../src/6_shared/styles/tailwind.css";
+import "../src/6_shared/styles/storybookGlobal.css";
 
 const decorators = [
-  (Story, context) => {
-    const { locale } = context.globals;
-
-    useEffect(() => {
-      i18n.changeLanguage(locale);
-    }, [locale]);
-
+  (Story) => {
     return (
-      <I18nextProvider i18n={i18n}>
-        <Story/>
-      </I18nextProvider>
-    )
-  }
+      <NextUIProvider>
+        <Story />
+      </NextUIProvider>
+    );
+  },
 ];
 
 const preview: Preview = {
@@ -28,36 +21,27 @@ const preview: Preview = {
       router: {
         locale: "en",
         basePath: "/",
-        isReady: true
+        isReady: true,
       },
-      appDirectory: true
     },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/
-      }
-    }
-  },
-  decorators
-};
-
-export const globalTypes = {
-  locale: {
-    name: "Locale",
-    description: "Internationalization locale",
-    toolbar: {
-      icon: "globe",
-      items: [
-        { value: "en", title: "English" },
-        { value: "jp", title: "Japan" },
-        { value: "ru", title: "Russian" },
+        date: /Date$/,
+      },
+    },
+    backgrounds: {
+      default: "default",
+      values: [
+        {
+          name: "default",
+          value: "#121316",
+        },
       ],
-      showName: true,
     },
   },
+  decorators,
 };
 
 export default preview;
-
