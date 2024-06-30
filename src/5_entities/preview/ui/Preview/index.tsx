@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 import styles from "./Preview.module.scss";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import RevealOnScroll from "@/shared/ui/RevealOnScroll";
+import { RevealOnScroll } from "@/shared/index";
 
 export default function Preview() {
   const { locale } = useRouter();
@@ -37,36 +37,31 @@ export default function Preview() {
 
   return (
     <div className={styles["preview"]}>
+      <RevealOnScroll variant="arise-from-top" delay={500}>
+        <p className={styles["preview__static-text"]}>{t("hello")}</p>
+      </RevealOnScroll>
       <RevealOnScroll variant="arise-from-top" delay={1000}>
-        <h1>{t("hello")}</h1>
+        <p className={styles["preview__static-text"]}>
+          {t("preName")} <strong>{t("name")}</strong>
+        </p>
       </RevealOnScroll>
       <RevealOnScroll variant="arise-from-top" delay={1500}>
-        <h1>
-          {t("preName")} <strong>{t("name")}</strong>
-        </h1>
-      </RevealOnScroll>
-      <RevealOnScroll variant="arise-from-top" delay={2000}>
-        {flagRender ? (
+        {flagRender && (
           <TypeAnimation
-            className={styles["preview__text"]}
+            preRenderFirstString
+            className={styles["preview__anim-text"]}
             sequence={[
-              (el) => el!.classList.add(styles["preview__text--animation"]),
               2000,
-              (el) => el!.classList.remove(styles["preview__text--animation"]),
               `${t("aboutMe.first")}`,
-              (el) => el!.classList.add(styles["preview__text--animation"]),
               3000,
-              (el) => el!.classList.remove(styles["preview__text--animation"]),
               `${t("aboutMe.second")}`,
-              0,
+              1000,
             ]}
             speed={30}
             repeat={Infinity}
             cursor={false}
             wrapper="h1"
           />
-        ) : (
-          <></>
         )}
       </RevealOnScroll>
     </div>

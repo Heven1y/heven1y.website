@@ -2,13 +2,11 @@ import GitHubIcon from "@/shared/icons/GitHub";
 import LinkedInIcon from "@/shared/icons/LinkedIn";
 import MailIcon from "@/shared/icons/Mail";
 import TelegramIcon from "@/shared/icons/Telegram";
-import { PageTabMenu } from "@/shared/index";
-import LinkButton from "@/shared/ui/LinkButton";
-import Logo from "@/shared/ui/Logo";
+import { PageTabMenu, LinkButton, Logo } from "@/shared/index";
 import React from "react";
 
 import styles from "./Header.module.scss";
-import SelectLanguage from "@/features/languageSwitcher/ui/SelectLanguage";
+import { SelectLanguage } from "@/features/languageSwitcher/index";
 import { useTranslation } from "next-i18next";
 import { LINKS, TABS } from "../../model/enums";
 import { useRouter } from "next/router";
