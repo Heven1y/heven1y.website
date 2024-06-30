@@ -10,23 +10,16 @@
   align-items: flex-start;
   padding: 60px 80px;
   z-index: 1;
-
-  h1 {
-    @extend .font-display-1;
-  }
 }
 
-.preview__text {
+.preview__static-text {
   @extend .font-display-1;
-  text-align: left;
+}
+
+.preview__anim-text {
+  @extend .font-display-1;
   width: 100%;
 
-  &::after {
-    content: '❚';
-  }
-}
-
-.preview__text--animation {
   &::after {
     content: '❚';
     animation: cursor 3.5s ease 0s infinite normal none;

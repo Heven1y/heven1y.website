@@ -1,7 +1,8 @@
-import RevealOnScroll from "@/shared/ui/RevealOnScroll";
-import Spot from "../Spot";
-import styles from "./Whoami.module.scss";
 import { useTranslation } from "next-i18next";
+import { RevealOnScroll } from "@/shared/index";
+import Spot from "../Spot";
+
+import styles from "./Whoami.module.scss";
 
 export default function Whoami() {
   const { t } = useTranslation("entities.Whoami");

@@ -1,13 +1,13 @@
 @import '../../6_shared/styles/constant.scss';
 
-.wrapper__preview {
+.about-me__preview {
   display: grid;
   grid-template-rows: auto 1fr;
   min-height: 100vh;
   padding: 0;
 }
 
-.wrapper__light {
+.about-me__light-spot {
   position: absolute;
   width: 1000px;
   height: 1000px;

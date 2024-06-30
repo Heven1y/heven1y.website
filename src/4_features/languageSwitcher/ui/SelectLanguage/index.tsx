@@ -1,5 +1,5 @@
 import { LANGUAGES } from "@/shared/config/constants";
-import Select from "@/shared/ui/Select";
+import { Select } from "@/shared/index";
 import { Button, Selection } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import React from "react";

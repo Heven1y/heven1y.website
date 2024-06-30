@@ -2,8 +2,7 @@
 
 .card-skills {
   border-radius: $border-radius;
-  border-color: $divider !important;
-  border: 1px solid;
+  border: 1px solid $divider;
   background-color: $skill-bg;
   display: flex;
   flex-direction: column;
