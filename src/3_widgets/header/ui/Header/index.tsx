@@ -1,15 +1,18 @@
+import React from "react";
+
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+
+import { SelectLanguage } from "@/features/languageSwitcher";
 import GitHubIcon from "@/shared/icons/GitHub";
 import LinkedInIcon from "@/shared/icons/LinkedIn";
 import MailIcon from "@/shared/icons/Mail";
 import TelegramIcon from "@/shared/icons/Telegram";
-import { PageTabMenu, LinkButton, Logo } from "@/shared/index";
-import React from "react";
+import { PageTabMenu, LinkButton, Logo } from "@/shared/ui";
+
+import { LINKS, TABS } from "../../model/enums";
 
 import styles from "./Header.module.scss";
-import { SelectLanguage } from "@/features/languageSwitcher/index";
-import { useTranslation } from "next-i18next";
-import { LINKS, TABS } from "../../model/enums";
-import { useRouter } from "next/router";
 
 type PropsHeader = {
   activeTabId: TABS;

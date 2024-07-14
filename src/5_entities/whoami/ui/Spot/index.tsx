@@ -3,7 +3,7 @@ import classNames from "classnames";
 import styles from "./Spot.module.scss";
 
 export default function Spot({ className }: { className?: string }) {
-  const classSpot = classNames(styles["spot"], className);
+  const classSpot = classNames(styles.spot, className);
 
   return (
     <svg

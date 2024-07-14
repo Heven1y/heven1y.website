@@ -1,10 +1,12 @@
 import React from "react";
+
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 import { TypeAnimation } from "react-type-animation";
 
+import { RevealOnScroll } from "@/shared/ui";
+
 import styles from "./Preview.module.scss";
-import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
-import { RevealOnScroll } from "@/shared/index";
 
 export default function Preview() {
   const { locale } = useRouter();
@@ -24,9 +26,8 @@ export default function Preview() {
   */
 
   React.useEffect(() => {
-    let timeout: NodeJS.Timeout;
     setFlagRender(false);
-    timeout = setTimeout(() => {
+    const timeout = setTimeout(() => {
       setFlagRender(true);
     }, 1);
 
@@ -36,7 +37,7 @@ export default function Preview() {
   }, [locale]);
 
   return (
-    <div className={styles["preview"]}>
+    <div className={styles.preview}>
       <RevealOnScroll variant="arise-from-top" delay={500}>
         <p className={styles["preview__static-text"]}>{t("hello")}</p>
       </RevealOnScroll>

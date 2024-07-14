@@ -1,8 +1,9 @@
 import React from "react";
 
-import styles from "./PageTabMenu.module.scss";
-import classNames from "classnames";
 import { Button } from "@nextui-org/react";
+import classNames from "classnames";
+
+import styles from "./PageTabMenu.module.scss";
 
 type PropsPageTabMenu = {
   onClick?: () => void;

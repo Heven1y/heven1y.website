@@ -1,10 +1,13 @@
 import React from "react";
+
 import { Meta, StoryFn } from "@storybook/react";
-import LinkButton from "./index";
-import LinkedInIcon from "@/shared/icons/LinkedIn";
+
 import GitHubIcon from "@/shared/icons/GitHub";
-import TelegramIcon from "@/shared/icons/Telegram";
+import LinkedInIcon from "@/shared/icons/LinkedIn";
 import MailIcon from "@/shared/icons/Mail";
+import TelegramIcon from "@/shared/icons/Telegram";
+
+import LinkButton from "./index";
 
 export default {
   title: "Shared/LinkButton",
