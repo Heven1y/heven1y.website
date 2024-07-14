@@ -1,5 +1,6 @@
 import { useTranslation } from "next-i18next";
-import { Container } from "@/shared/index";
+
+import { Container } from "@/shared/ui";
 
 import styles from "./Footer.module.scss";
 

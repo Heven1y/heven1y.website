@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   Dropdown,
   DropdownItem,
@@ -5,7 +7,6 @@ import {
   DropdownTrigger,
   Selection,
 } from "@nextui-org/react";
-import React from "react";
 
 type Item = {
   key: string;

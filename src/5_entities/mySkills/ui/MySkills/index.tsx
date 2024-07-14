@@ -1,10 +1,13 @@
 import { useTranslation } from "next-i18next";
-import styles from "./MySkills.module.scss";
+
+import { RevealOnScroll } from "@/shared/ui";
+
+import LanguagesCard from "../LanguagesCard";
+import ProgrammingLanguagesCard from "../ProgrammingLanguagesCard";
 import SoftwareAndToolsCard from "../SoftwareAndToolsCard";
 import TechnologiesCard from "../TechnologiesCard";
-import ProgrammingLanguagesCard from "../ProgrammingLanguagesCard";
-import LanguagesCard from "../LanguagesCard";
-import { RevealOnScroll } from "@/shared/index";
+
+import styles from "./MySkills.module.scss";
 
 export default function MySkills() {
   const { t } = useTranslation("entities.MySkills");

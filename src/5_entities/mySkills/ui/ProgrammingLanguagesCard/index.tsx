@@ -1,30 +1,31 @@
-import { BORDER_COLORS_SKILLS } from "@/shared/models/enums";
-import { SkillElement } from "@/shared/index";
-import CardSkills from "../CardSkills";
+import { BorderColorsSkills } from "@/shared/models/enums";
+import { SkillElement } from "@/shared/ui";
+
+import CSharpIcon from "../../icons/ProgramingLanguages/C#";
+import JavaIcon from "../../icons/ProgramingLanguages/Java";
 import JavaScriptIcon from "../../icons/ProgramingLanguages/JavaScript";
 import TypeScriptIcon from "../../icons/ProgramingLanguages/TypeScript";
-import JavaIcon from "../../icons/ProgramingLanguages/Java";
-import CSharpIcon from "../../icons/ProgramingLanguages/C#";
+import CardSkills from "../CardSkills";
 
 export default function ProgrammingLanguagesCard({ title }: { title: string }) {
   return (
     <CardSkills title={title}>
       <SkillElement
         name="JavaScript"
-        borderColor={BORDER_COLORS_SKILLS.JavaScript}
+        borderColor={BorderColorsSkills.JavaScript}
       >
         <JavaScriptIcon />
       </SkillElement>
       <SkillElement
         name="TypeScript"
-        borderColor={BORDER_COLORS_SKILLS.TypeScript}
+        borderColor={BorderColorsSkills.TypeScript}
       >
         <TypeScriptIcon />
       </SkillElement>
-      <SkillElement name="Java" borderColor={BORDER_COLORS_SKILLS.Java}>
+      <SkillElement name="Java" borderColor={BorderColorsSkills.Java}>
         <JavaIcon />
       </SkillElement>
-      <SkillElement name="C#" borderColor={BORDER_COLORS_SKILLS.CSharp}>
+      <SkillElement name="C#" borderColor={BorderColorsSkills.CSharp}>
         <CSharpIcon />
       </SkillElement>
     </CardSkills>

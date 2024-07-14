@@ -1,4 +1,4 @@
-export enum BORDER_COLORS_SKILLS {
+export enum BorderColorsSkills {
   Git = "git",
   Jira = "jira",
   Figma = "figma",
@@ -26,4 +26,9 @@ export enum BORDER_COLORS_SKILLS {
   English = "english",
   Russian = "russian",
   Japanese = "japanese",
+}
+
+export enum Tabs {
+  about = "about",
+  projects = "projects",
 }

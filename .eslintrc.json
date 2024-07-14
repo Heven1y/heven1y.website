@@ -6,7 +6,6 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:storybook/recommended",
     "plugin:storybook/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -16,7 +15,7 @@
     },
     "ecmaVersion": 2018,
     "sourceType": "module",
-    "project": ["*/tsconfig.json"]
+    "project": "./tsconfig.json"
   },
   "plugins": [
     "react",
@@ -28,9 +27,7 @@
   "rules": {
     "@typescript-eslint/dot-notation": [
       "error",
-      {
-        "allowPattern": "^[a-z]+(__[a-z]+)+$"
-      }
+      { "allowPattern": "^[a-z]+(__[a-z]+)+$" }
     ],
     "@typescript-eslint/no-unused-expressions": [
       "error",
@@ -38,24 +35,9 @@
         "allowShortCircuit": true
       }
     ],
-    "no-console": [
-      "warn",
-      {
-        "allow": ["warn", "error"]
-      }
-    ],
-    "import/newline-after-import": [
-      "error",
-      {
-        "count": 1
-      }
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true
-      }
-    ],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "import/order": [
       "warn",
       {

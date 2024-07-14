@@ -1,5 +1,6 @@
-import classNames from "classnames";
 import React from "react";
+
+import classNames from "classnames";
 
 export default function RevealOnScroll({
   children,
@@ -14,19 +15,20 @@ export default function RevealOnScroll({
   const ref = React.useRef(null);
 
   React.useEffect(() => {
+    const currentRef = ref.current;
     const scrollObserver = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
         scrollObserver.unobserve(entry.target);
       }
     });
-    if (ref.current) {
-      scrollObserver.observe(ref.current);
+    if (currentRef) {
+      scrollObserver.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        scrollObserver.unobserve(ref.current);
+      if (currentRef) {
+        scrollObserver.unobserve(currentRef);
       }
     };
   }, []);
@@ -40,13 +42,6 @@ export default function RevealOnScroll({
       variant === "arise-from-right" && !isVisible,
     "opacity-100 translate-y-[0] translate-x-[0]": isVisible,
   });
-
-  // const classes = `transition duration-1000 delay-[1s]
-  //     ${
-  //       isVisible
-  //         ? `opacity-100 translate-y-[0] translate-x-[0]`
-  //         : `opacity-0 translate-y-[${offsetY ?? 0}px] translate-x-[${offsetX ?? 0}px]`
-  //     }`;
 
   return (
     <div

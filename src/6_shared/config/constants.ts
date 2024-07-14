@@ -12,3 +12,5 @@ export const LANGUAGES = [
     label: "日本語",
   },
 ];
+
+export const BREAKPOINT_MINI_LAPTOP_PX = 1000;

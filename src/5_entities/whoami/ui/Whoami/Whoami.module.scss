@@ -1,15 +1,17 @@
-@import "../../../../6_shared/styles/constant.scss";
+@import "src/6_shared/styles/constant.scss";
+@import "src/6_shared/styles/mixins.scss";
 
 .whoami {
   display: flex;
   width: 100%;
   height: fit-content;
-  padding: 60px 80px 200px 80px;
+  padding: 60px 0 200px 0;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 40px;
   overflow: hidden;
+  position: relative;
 }
 
 .whoami__title {
@@ -23,6 +25,12 @@
 .whoami__spot {
   position: absolute;
   z-index: -1;
-  width: 80%;
-  height: 50%;
+  width: 100%;
+  height: 90%;
+
+  @include big-mobile {
+    transform: rotate(90deg) translateY(15%);
+    width: 140%;
+    height: 55%;
+  }
 }

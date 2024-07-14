@@ -1,12 +1,15 @@
-import { LANGUAGES } from "@/shared/config/constants";
-import { Select } from "@/shared/index";
-import { Button, Selection } from "@nextui-org/react";
-import { useRouter } from "next/router";
 import React from "react";
 
-import styles from "./SelectLanguage.module.scss";
-import LanguageIcon from "../../icons/Language";
+import { Button, Selection } from "@nextui-org/react";
+import { useRouter } from "next/router";
+
+import { LANGUAGES } from "@/shared/config/constants";
+import { Select } from "@/shared/ui";
+
 import ArrowIcon from "../../icons/Arrow";
+import LanguageIcon from "../../icons/Language";
+
+import styles from "./SelectLanguage.module.scss";
 
 export default function SelectLanguage() {
   const router = useRouter();
