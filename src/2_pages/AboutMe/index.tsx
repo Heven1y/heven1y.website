@@ -1,11 +1,12 @@
 import React from "react";
-import { Preview } from "@/entities/preview/index";
-import { Container } from "@/shared/index";
+
+import { Footer } from "@/entities/footer";
+import { MySkills } from "@/entities/mySkills";
+import { Preview } from "@/entities/preview";
+import { Whoami } from "@/entities/whoami";
+import { Container } from "@/shared/ui";
+import { Header } from "@/widgets/header";
 import { TABS } from "@/widgets/header/model/enums";
-import { Header } from "@/widgets/header/index";
-import { Whoami } from "@/entities/whoami/index";
-import { MySkills } from "@/entities/mySkills/index";
-import { Footer } from "@/entities/footer/index";
 
 import styles from "./AboutMe.module.scss";
 

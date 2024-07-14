@@ -1,8 +1,11 @@
 import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
-import Select from "./index";
+
 import { Button } from "@nextui-org/react";
+import { Meta, StoryFn } from "@storybook/react";
+
 import { LANGUAGES } from "@/shared/config/constants";
+
+import Select from "./index";
 
 export default {
   title: "Shared/Select",

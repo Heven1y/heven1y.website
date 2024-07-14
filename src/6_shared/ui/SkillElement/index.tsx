@@ -1,8 +1,10 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
+
+import classNames from "classnames";
+
+import { BorderColorsSkills } from "@/shared/models/enums";
 
 import styles from "./SkillElement.module.scss";
-import classNames from "classnames";
-import { BORDER_COLORS_SKILLS } from "@/shared/models/enums";
 
 export default function SkillElement({
   children,
@@ -10,12 +12,12 @@ export default function SkillElement({
   name,
 }: {
   children: ReactNode;
-  borderColor: BORDER_COLORS_SKILLS;
+  borderColor: BorderColorsSkills;
   name: string;
 }) {
   const classSkillElement = classNames(
     styles["skill-element"],
-    styles[borderColor]
+    styles[borderColor],
   );
 
   return (

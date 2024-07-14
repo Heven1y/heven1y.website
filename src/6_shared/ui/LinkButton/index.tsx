@@ -1,7 +1,8 @@
 import React from "react";
 
-import styles from "./LinkButton.module.scss";
 import Link from "next/link";
+
+import styles from "./LinkButton.module.scss";
 
 type PropsLinkButton = {
   children: React.ReactNode;

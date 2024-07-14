@@ -1,7 +1,10 @@
 import React from "react";
+
 import { Meta, StoryFn } from "@storybook/react";
-import Header from "./index";
+
 import { TABS } from "../../model/enums";
+
+import Header from "./index";
 
 export default {
   title: "Widgets/Header",

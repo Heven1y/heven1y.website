@@ -1,5 +1,7 @@
 import { useTranslation } from "next-i18next";
-import { RevealOnScroll } from "@/shared/index";
+
+import { RevealOnScroll } from "@/shared/ui";
+
 import Spot from "../Spot";
 
 import styles from "./Whoami.module.scss";

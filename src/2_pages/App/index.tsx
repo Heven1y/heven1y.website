@@ -1,11 +1,11 @@
 import React from "react";
 
+import { NextUIProvider } from "@nextui-org/react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useTranslation } from "next-i18next";
 
 import { raleway } from "@/shared/styles/fonts";
-import { NextUIProvider } from "@nextui-org/react";
 
 export default function App({ Component, pageProps }: AppProps) {
   const { t } = useTranslation("pages.App");
