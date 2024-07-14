@@ -1,0 +1,45 @@
+@import "src/6_shared/styles/constant.scss";
+
+.menu-header {
+  min-width: 200px;
+}
+
+.menu-header__content {
+  padding: 10px 10px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-header__box-items {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.menu-header__item {
+  padding: 10px;
+  span {
+    @extend .font-simple-1;
+  }
+}
+
+.menu-header__trigger {
+  width: fit-content;
+  color: $primary;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: $border-radius;
+  border: rgba(0, 0, 0, 0) solid 1px;
+  min-width: auto;
+  gap: 5px;
+
+  &:hover {
+    background-color: $bg-color;
+    box-shadow: $inner-shadow;
+    border: $bloom solid 1px;
+    color: $bloom;
+  }
+}

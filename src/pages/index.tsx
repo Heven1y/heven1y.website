@@ -10,6 +10,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
     "entities.Whoami",
     "entities.MySkills",
     "entities.Footer",
+    "features.MenuHeader",
   ]);
 
   return {

@@ -7,6 +7,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
     "pages.App",
     "pages.Projects",
     "widgets.Header",
+    "features.MenuHeader",
   ]);
 
   return {

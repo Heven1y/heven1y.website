@@ -29,7 +29,7 @@ export default function Preview() {
     setFlagRender(false);
     const timeout = setTimeout(() => {
       setFlagRender(true);
-    }, 1);
+    }, 50);
 
     return () => {
       clearTimeout(timeout);
