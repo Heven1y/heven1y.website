@@ -4,9 +4,9 @@ import { Footer } from "@/entities/footer";
 import { MySkills } from "@/entities/mySkills";
 import { Preview } from "@/entities/preview";
 import { Whoami } from "@/entities/whoami";
+import { Tabs } from "@/shared/models/enums";
 import { Container } from "@/shared/ui";
 import { Header } from "@/widgets/header";
-import { TABS } from "@/widgets/header/model/enums";
 
 import styles from "./AboutMe.module.scss";
 
@@ -16,7 +16,7 @@ export default function AboutMe() {
       <div className={styles["about-me__light-spot"]} />
       <Container>
         <div className={styles["about-me__preview"]}>
-          <Header activeTabId={TABS.about} />
+          <Header activeTabId={Tabs.about} />
           <Preview />
         </div>
         <Whoami />

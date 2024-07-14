@@ -1,4 +1,5 @@
-@import '../../6_shared/styles/constant.scss';
+@import "src/6_shared/styles/constant.scss";
+@import "src/6_shared/styles/mixins.scss";
 
 .about-me__preview {
   display: grid;
@@ -17,6 +18,16 @@
   transform: translate(-50%, -50%);
   border-radius: 1000px;
   border: 1px solid #000;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.50) 0%, rgba(20, 19, 19, 0.50) 41.5%, rgba(222, 222, 222, 0.50) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(20, 19, 19, 0.5) 41.5%,
+    rgba(222, 222, 222, 0.5) 100%
+  );
   filter: blur(50px);
+
+  @include mini-laptop {
+    width: 100%;
+    height: 100vw;
+  }
 }

@@ -1,4 +1,5 @@
-@import "../../../../6_shared/styles/constant.scss";
+@import "src/6_shared/styles/constant.scss";
+@import "src/6_shared/styles/mixins.scss";
 
 .preview {
   position: relative;
@@ -8,7 +9,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 60px 80px;
+  padding: 60px 0px;
   z-index: 1;
 }
 
@@ -21,12 +22,11 @@
   width: 100%;
 
   &::after {
-    content: '❚';
+    content: "❚";
     animation: cursor 3.5s ease 0s infinite normal none;
   }
 
   @keyframes cursor {
-
     0%,
     50%,
     100% {

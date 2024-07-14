@@ -4,14 +4,14 @@ import { Meta, StoryFn } from "@storybook/react";
 
 import { Tabs } from "@/shared/models/enums";
 
-import Header from "./index";
+import MenuHeader from "./index";
 
 export default {
-  title: "Widgets/Header",
-  component: Header,
+  title: "Features/MenuHeader",
+  component: MenuHeader,
 } as Meta;
 
-const Template: StoryFn<typeof Header> = (args) => <Header {...args} />;
+const Template: StoryFn<typeof MenuHeader> = (args) => <MenuHeader {...args} />;
 
 export const Primary = Template.bind({});
 

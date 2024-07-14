@@ -27,3 +27,8 @@ export enum BorderColorsSkills {
   Russian = "russian",
   Japanese = "japanese",
 }
+
+export enum Tabs {
+  about = "about",
+  projects = "projects",
+}
