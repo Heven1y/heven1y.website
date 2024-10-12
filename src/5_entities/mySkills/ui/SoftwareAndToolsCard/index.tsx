@@ -1,5 +1,5 @@
 import { BorderColorsSkills } from "@/shared/models/enums";
-import { SkillElement } from "@/shared/ui";
+import { SkillElement, CardSkills } from "@/shared/ui";
 
 import AndroidStudioIcon from "../../icons/SoftwareAndTools/AndroidStudio";
 import BitbacketIcon from "../../icons/SoftwareAndTools/Bitbacket";
@@ -8,7 +8,6 @@ import GitIcon from "../../icons/SoftwareAndTools/Git";
 import JiraIcon from "../../icons/SoftwareAndTools/Jira";
 import SplineIcon from "../../icons/SoftwareAndTools/Spline";
 import TildaIcon from "../../icons/SoftwareAndTools/Tilda";
-import CardSkills from "../CardSkills";
 
 export default function SoftwareAndToolsCard({ title }: { title: string }) {
   return (

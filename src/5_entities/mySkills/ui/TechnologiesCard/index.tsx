@@ -1,5 +1,5 @@
 import { BorderColorsSkills } from "@/shared/models/enums";
-import { SkillElement } from "@/shared/ui";
+import { SkillElement, CardSkills } from "@/shared/ui";
 
 import FirebaseIcon from "../../icons/Technologies/Firebase";
 import FSDIcon from "../../icons/Technologies/FSD";
@@ -13,7 +13,6 @@ import ReduxIcon from "../../icons/Technologies/Redux";
 import StorybookIcon from "../../icons/Technologies/Storybook";
 import ViteIcon from "../../icons/Technologies/Vite";
 import VueIcon from "../../icons/Technologies/Vue";
-import CardSkills from "../CardSkills";
 
 export default function TechnologiesCard({ title }: { title: string }) {
   return (
