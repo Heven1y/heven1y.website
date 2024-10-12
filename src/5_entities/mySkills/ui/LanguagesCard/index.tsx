@@ -1,10 +1,9 @@
 import { BorderColorsSkills } from "@/shared/models/enums";
-import { SkillElement } from "@/shared/ui";
+import { SkillElement, CardSkills } from "@/shared/ui";
 
 import JapanIcon from "../../icons/Languages/Japan";
 import RussiaIcon from "../../icons/Languages/Russia";
 import USAIcon from "../../icons/Languages/USA";
-import CardSkills from "../CardSkills";
 
 export default function LanguagesCard({ title }: { title: string }) {
   return (

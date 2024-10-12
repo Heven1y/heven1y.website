@@ -25,7 +25,7 @@ module.exports = {
         dark: {
           layout: {},
           colors: {
-            background: "#121316"
+            background: "#121316",
           },
         },
       },

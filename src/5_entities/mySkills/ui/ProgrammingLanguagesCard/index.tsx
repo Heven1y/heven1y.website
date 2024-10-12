@@ -1,11 +1,10 @@
 import { BorderColorsSkills } from "@/shared/models/enums";
-import { SkillElement } from "@/shared/ui";
+import { SkillElement, CardSkills } from "@/shared/ui";
 
 import CSharpIcon from "../../icons/ProgramingLanguages/C#";
 import JavaIcon from "../../icons/ProgramingLanguages/Java";
 import JavaScriptIcon from "../../icons/ProgramingLanguages/JavaScript";
 import TypeScriptIcon from "../../icons/ProgramingLanguages/TypeScript";
-import CardSkills from "../CardSkills";
 
 export default function ProgrammingLanguagesCard({ title }: { title: string }) {
   return (

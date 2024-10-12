@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React from "react";
 
 import classNames from "classnames";
 
@@ -11,7 +11,7 @@ export default function SkillElement({
   borderColor,
   name,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
   borderColor: BorderColorsSkills;
   name: string;
 }) {

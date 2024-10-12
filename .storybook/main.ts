@@ -1,4 +1,5 @@
 import tsconfigPaths from "vite-tsconfig-paths";
+import react from "@vitejs/plugin-react";
 import path from "path";
 
 const config = {
@@ -24,6 +25,11 @@ const config = {
     config.plugins.push(
       tsconfigPaths({
         projects: [path.resolve(path.dirname(__dirname), "tsconfig.json")],
+      })
+    );
+    config.plugins.push(
+      react({
+        jsxRuntime: "automatic",
       })
     );
     config.define = {

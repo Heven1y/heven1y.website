@@ -3,23 +3,23 @@ import { Meta, StoryFn } from "@storybook/react";
 import { BorderColorsSkills } from "@/shared/models/enums";
 import { SkillElement } from "@/shared/ui";
 
-import FirebaseIcon from "../../icons/Technologies/Firebase";
-import FSDIcon from "../../icons/Technologies/FSD";
-import GraphQLIcon from "../../icons/Technologies/GraphQL";
-import IonicIcon from "../../icons/Technologies/Ionic";
-import MobXIcon from "../../icons/Technologies/MobX";
-import NextJSIcon from "../../icons/Technologies/NextJS";
-import ReactIcon from "../../icons/Technologies/React";
-import ReactQueryIcon from "../../icons/Technologies/ReactQuery";
-import ReduxIcon from "../../icons/Technologies/Redux";
-import StorybookIcon from "../../icons/Technologies/Storybook";
-import ViteIcon from "../../icons/Technologies/Vite";
-import VueIcon from "../../icons/Technologies/Vue";
+import FirebaseIcon from "../../../5_entities/mySkills/icons/Technologies/Firebase";
+import FSDIcon from "../../../5_entities/mySkills/icons/Technologies/FSD";
+import GraphQLIcon from "../../../5_entities/mySkills/icons/Technologies/GraphQL";
+import IonicIcon from "../../../5_entities/mySkills/icons/Technologies/Ionic";
+import MobXIcon from "../../../5_entities/mySkills/icons/Technologies/MobX";
+import NextJSIcon from "../../../5_entities/mySkills/icons/Technologies/NextJS";
+import ReactIcon from "../../../5_entities/mySkills/icons/Technologies/React";
+import ReactQueryIcon from "../../../5_entities/mySkills/icons/Technologies/ReactQuery";
+import ReduxIcon from "../../../5_entities/mySkills/icons/Technologies/Redux";
+import StorybookIcon from "../../../5_entities/mySkills/icons/Technologies/Storybook";
+import ViteIcon from "../../../5_entities/mySkills/icons/Technologies/Vite";
+import VueIcon from "../../../5_entities/mySkills/icons/Technologies/Vue";
 
 import CardSkills from "./index";
 
 export default {
-  title: "Entities/CardSkills",
+  title: "Shared/CardSkills",
   component: CardSkills,
 } as Meta;
 
