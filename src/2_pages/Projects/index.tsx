@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useTranslation } from "next-i18next";
+import { useTranslations } from "next-intl";
 
 import { Tabs } from "@/shared/models/enums";
 import { Container } from "@/shared/ui";
@@ -8,8 +8,8 @@ import { Header } from "@/widgets/header";
 
 import styles from "./Projects.module.scss";
 
-export default function Projects() {
-  const { t } = useTranslation("pages.Projects");
+export default async function Projects() {
+  const t = useTranslations("pages_Projects");
   return (
     <div className={styles.wrapper}>
       <Container>

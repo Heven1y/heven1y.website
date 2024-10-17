@@ -1,7 +1,8 @@
+"use client";
+
 import React from "react";
 
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
+import { useLocale, useTranslations } from "next-intl";
 import { TypeAnimation } from "react-type-animation";
 
 import { RevealOnScroll } from "@/shared/ui";
@@ -9,8 +10,8 @@ import { RevealOnScroll } from "@/shared/ui";
 import styles from "./Preview.module.scss";
 
 export default function Preview() {
-  const { locale } = useRouter();
-  const { t } = useTranslation("entities.Preview");
+  const locale = useLocale();
+  const t = useTranslations("entities_Preview");
   const [flagRender, setFlagRender] = React.useState(true);
 
   /*

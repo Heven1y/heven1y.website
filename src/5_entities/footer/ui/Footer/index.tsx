@@ -1,11 +1,13 @@
-import { useTranslation } from "next-i18next";
+"use client";
+
+import { useTranslations } from "next-intl";
 
 import { Container } from "@/shared/ui";
 
 import styles from "./Footer.module.scss";
 
 export default function Footer() {
-  const { t } = useTranslation("entities.Footer");
+  const t = useTranslations("entities_Footer");
   return (
     <footer className={styles.footer}>
       <Container>

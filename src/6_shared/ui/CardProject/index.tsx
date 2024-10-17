@@ -1,6 +1,8 @@
+"use client";
+
 import { ReactNode } from "react";
 
-import { useTranslation } from "next-i18next";
+import { useTranslations } from "next-intl";
 
 import { BorderColorsSkills } from "@/shared/models/enums";
 
@@ -26,7 +28,7 @@ type CardProjectProps = {
 };
 
 export default function CardProject(props: CardProjectProps) {
-  const { t } = useTranslation("shared.CardProject");
+  const t = useTranslations("shared_CardProject");
 
   return (
     <div className={styles["card-project"]}>

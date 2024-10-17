@@ -1,9 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { i18n } = require("./next-i18next.config");
+// eslint-disable-next-line import/no-extraneous-dependencies
+const createNextIntlPlugin = require("next-intl/plugin");
+
+const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  i18n,
-};
+const nextConfig = {};
 
-module.exports = nextConfig;
+module.exports = withNextIntl(nextConfig);

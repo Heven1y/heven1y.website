@@ -1,10 +1,12 @@
+"use client";
+
 import React from "react";
 
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
+import { useTranslations } from "next-intl";
 
 import { SelectLanguage } from "@/features/languageSwitcher";
 import MenuHeader from "@/features/menuHeader/ui/MenuHeader";
+import { useRouter } from "@/i18n/routing";
 import { BREAKPOINT_MINI_LAPTOP_PX } from "@/shared/config/constants";
 import useWindowWidthResize from "@/shared/hooks/useWindowWidthResize";
 import GitHubIcon from "@/shared/icons/GitHub";
@@ -23,7 +25,7 @@ type PropsHeader = {
 };
 
 export default function Header(props: PropsHeader) {
-  const { t } = useTranslation("widgets.Header");
+  const t = useTranslations("widgets_Header");
   const windowWidth = useWindowWidthResize();
   const router = useRouter();
 

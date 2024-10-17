@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
 
 import { Button, Selection } from "@nextui-org/react";
-import { useRouter } from "next/router";
+import { useLocale } from "next-intl";
 
+import { usePathname, useRouter } from "@/i18n/routing";
 import { LANGUAGES } from "@/shared/config/constants";
 import { Select } from "@/shared/ui";
 
@@ -13,11 +16,12 @@ import styles from "./SelectLanguage.module.scss";
 
 export default function SelectLanguage() {
   const router = useRouter();
-  const { pathname, asPath, query, locale } = router;
+  const pathname = usePathname();
+  const locale = useLocale();
   function switchHandler(values: Selection) {
     const keyLocal = Array.from(values).join(", ").replaceAll("_", " ");
     if (keyLocal.length > 0) {
-      router.push({ pathname, query }, asPath, { locale: keyLocal });
+      router.replace(pathname, { locale: keyLocal as "ru" | "jp" | "en" });
     }
   }
 

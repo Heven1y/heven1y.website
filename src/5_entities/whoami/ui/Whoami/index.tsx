@@ -1,4 +1,6 @@
-import { useTranslation } from "next-i18next";
+"use client";
+
+import { useTranslations } from "next-intl";
 
 import { RevealOnScroll } from "@/shared/ui";
 
@@ -7,7 +9,7 @@ import Spot from "../Spot";
 import styles from "./Whoami.module.scss";
 
 export default function Whoami() {
-  const { t } = useTranslation("entities.Whoami");
+  const t = useTranslations("entities_Whoami");
   return (
     <div className={styles.whoami}>
       <Spot className={styles["whoami__spot"]} />
