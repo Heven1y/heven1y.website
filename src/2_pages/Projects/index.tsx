@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import { useTranslations } from "next-intl";
@@ -8,7 +10,7 @@ import { Header } from "@/widgets/header";
 
 import styles from "./Projects.module.scss";
 
-export default async function Projects() {
+export default function Projects() {
   const t = useTranslations("pages_Projects");
   return (
     <div className={styles.wrapper}>
