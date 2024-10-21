@@ -2,8 +2,12 @@ import React from "react";
 
 import { NextUIProvider } from "@nextui-org/react";
 import { Raleway } from "next/font/google";
+import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, unstable_setRequestLocale } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
+
+import { routing } from "@/i18n/routing";
+import { Languages } from "@/shared/models/enums";
 
 const raleway = Raleway({
   subsets: ["latin", "cyrillic"],
@@ -17,7 +21,11 @@ export default async function Layout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  unstable_setRequestLocale(locale);
+  if (!routing.locales.includes(locale as Languages)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (

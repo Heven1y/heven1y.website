@@ -1,3 +1,9 @@
+export enum Languages {
+  English = "en",
+  Russian = "ru",
+  Japanese = "ja",
+}
+
 export enum BorderColorsSkills {
   Git = "git",
   Jira = "jira",

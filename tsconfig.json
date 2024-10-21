@@ -26,8 +26,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.js",
-    "tailwind.config.js",
-    "src/i18n/i18n-resources.js"
+    "tailwind.config.js"
   ],
   "exclude": ["node_modules"]
 }

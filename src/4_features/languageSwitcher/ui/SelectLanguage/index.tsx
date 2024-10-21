@@ -7,6 +7,7 @@ import { useLocale } from "next-intl";
 
 import { usePathname, useRouter } from "@/i18n/routing";
 import { LANGUAGES } from "@/shared/config/constants";
+import { Languages } from "@/shared/models/enums";
 import { Select } from "@/shared/ui";
 
 import ArrowIcon from "../../icons/Arrow";
@@ -21,7 +22,7 @@ export default function SelectLanguage() {
   function switchHandler(values: Selection) {
     const keyLocal = Array.from(values).join(", ").replaceAll("_", " ");
     if (keyLocal.length > 0) {
-      router.replace(pathname, { locale: keyLocal as "ru" | "jp" | "en" });
+      router.replace(pathname, { locale: keyLocal as Languages });
     }
   }
 
@@ -32,7 +33,11 @@ export default function SelectLanguage() {
       onChange={switchHandler}
       items={LANGUAGES}
     >
-      <Button className={styles["select-language__trigger"]} variant="light">
+      <Button
+        aria-label="The button for switching the language"
+        className={styles["select-language__trigger"]}
+        variant="light"
+      >
         <LanguageIcon />
         <ArrowIcon />
       </Button>

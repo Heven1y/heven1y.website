@@ -40,16 +40,16 @@ export default function Header(props: PropsHeader) {
 
   const personLinks = (
     <div className={styles["header__links"]}>
-      <LinkButton link={Links.mail}>
+      <LinkButton ariaLabel="Mail" link={Links.mail}>
         <MailIcon />
       </LinkButton>
-      <LinkButton link={Links.telegram}>
+      <LinkButton ariaLabel="Telegram" link={Links.telegram}>
         <TelegramIcon />
       </LinkButton>
-      <LinkButton link={Links.linkedIn}>
+      <LinkButton ariaLabel="LinkedIn" link={Links.linkedIn}>
         <LinkedInIcon />
       </LinkButton>
-      <LinkButton link={Links.gitHub}>
+      <LinkButton ariaLabel="GitHub" link={Links.gitHub}>
         <GitHubIcon />
       </LinkButton>
     </div>

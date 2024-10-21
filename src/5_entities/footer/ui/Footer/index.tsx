@@ -1,13 +1,11 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 import { Container } from "@/shared/ui";
 
 import styles from "./Footer.module.scss";
 
-export default function Footer() {
-  const t = useTranslations("entities_Footer");
+export default async function Footer() {
+  const t = await getTranslations("entities_Footer");
   return (
     <footer className={styles.footer}>
       <Container>

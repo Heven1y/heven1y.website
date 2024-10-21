@@ -6,7 +6,7 @@ import styles from "./Logo.module.scss";
 
 export default function Logo() {
   return (
-    <Link className={styles.logo} href={"/"}>
+    <Link aria-label="Logo" className={styles.logo} href={"/"}>
       <div />
       <svg
         width="32"
