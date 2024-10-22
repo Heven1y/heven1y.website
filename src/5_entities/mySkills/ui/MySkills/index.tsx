@@ -1,4 +1,6 @@
-import { useTranslation } from "next-i18next";
+"use client";
+
+import { useTranslations } from "next-intl";
 
 import { RevealOnScroll } from "@/shared/ui";
 
@@ -10,7 +12,7 @@ import TechnologiesCard from "../TechnologiesCard";
 import styles from "./MySkills.module.scss";
 
 export default function MySkills() {
-  const { t } = useTranslation("entities.MySkills");
+  const t = useTranslations("entities_MySkills");
   return (
     <div className={styles["my-skills"]}>
       <RevealOnScroll variant="arise-from-top">

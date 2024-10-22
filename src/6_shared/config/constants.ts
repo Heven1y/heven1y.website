@@ -1,14 +1,16 @@
+import { Languages } from "../models/enums";
+
 export const LANGUAGES = [
   {
-    key: "en",
+    key: Languages.English,
     label: "English",
   },
   {
-    key: "ru",
+    key: Languages.Russian,
     label: "Русский",
   },
   {
-    key: "jp",
+    key: Languages.Japanese,
     label: "日本語",
   },
 ];

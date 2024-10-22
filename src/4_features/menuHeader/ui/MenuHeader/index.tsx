@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import {
@@ -8,7 +10,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@nextui-org/react";
-import { useTranslation } from "next-i18next";
+import { useTranslations } from "next-intl";
 
 import { Tabs } from "@/shared/models/enums";
 
@@ -25,7 +27,7 @@ export default function MenuHeader({
   activeTabId: Tabs;
   children?: React.ReactNode;
 }) {
-  const { t } = useTranslation("features.MenuHeader");
+  const t = useTranslations("features_MenuHeader");
 
   const handleClickItem = (tabId: Tabs) => {
     if (activeTabId === tabId) {

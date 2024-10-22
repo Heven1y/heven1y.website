@@ -8,6 +8,7 @@
       "@/features/*": ["./src/4_features/*"],
       "@/entities/*": ["./src/5_entities/*"],
       "@/shared/*": ["./src/6_shared/*"],
+      "@/i18n/*": ["./src/i18n/*"]
     }
   }
 }
