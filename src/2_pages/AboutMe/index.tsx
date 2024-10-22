@@ -10,7 +10,7 @@ import { Header } from "@/widgets/header";
 
 import styles from "./AboutMe.module.scss";
 
-export default function AboutMe() {
+export default async function AboutMe() {
   return (
     <>
       <div className={styles["about-me__light-spot"]} />
