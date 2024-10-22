@@ -15,6 +15,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const messages = await i18nResources(locale);
 
   return {
+    locale,
     messages,
   };
 });
