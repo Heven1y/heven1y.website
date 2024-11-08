@@ -10,6 +10,7 @@ const config = {
     "@storybook/addon-interactions",
     "@storybook/addon-mdx-gfm",
     "storybook-addon-mock",
+    "storybook-next-intl",
   ],
   framework: {
     name: "@storybook/nextjs",

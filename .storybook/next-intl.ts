@@ -1,8 +1,3 @@
-import { use } from "i18next";
-import { initReactI18next } from "react-i18next";
-
-const i18next = use(initReactI18next);
-
 async function collectLocales() {
   const resources = {};
 
@@ -19,30 +14,20 @@ async function collectLocales() {
     
     const { slice, component, language } = match.groups;
     
-    const localeData = await files[filePath]();
+    const localeData = (await files[filePath]()).default;
     
     if (!resources[language]) {
       resources[language] = {};
     }
-    resources[language][`${slice}.${component}`] = localeData;
+    resources[language][`${slice}_${component}`] = localeData;
   }
 
   return resources;
 }
 
-async function initI18n() {
-  const resources = await collectLocales();
+const messagesByLocale = await collectLocales();
 
-  i18next.init({
-    resources,
-    fallbackLng: "en",
-    interpolation: {
-      escapeValue: false,
-    },
-    returnObjects: true,
-  });
-}
-
-initI18n();
-
-export default i18next;
+export const nextIntl = {
+  defaultLocale: 'en',
+  messagesByLocale,
+};
