@@ -2,10 +2,12 @@ import React from "react";
 
 import { Meta, StoryFn } from "@storybook/react";
 
-import GitHubIcon from "@/shared/icons/GitHub";
-import LinkedInIcon from "@/shared/icons/LinkedIn";
-import MailIcon from "@/shared/icons/Mail";
-import TelegramIcon from "@/shared/icons/Telegram";
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+  TelegramIcon,
+} from "@/shared/icons/social";
 
 import LinkButton from "./index";
 
@@ -19,7 +21,7 @@ const Template: StoryFn<typeof LinkButton> = (args) => <LinkButton {...args} />;
 export const LinkedIn = Template.bind({});
 
 LinkedIn.args = {
-  link: "https://www.linkedin.com/in/semyon-bizin-7a5069240?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+  link: "https://linkedin.com/in/heven1y",
   children: <LinkedInIcon />,
 };
 
@@ -40,6 +42,6 @@ Telegram.args = {
 export const Mail = Template.bind({});
 
 Mail.args = {
-  link: "mailto:komrad.bizin@yandex.ru",
+  link: "mailto:heven1y@outlook.com",
   children: <MailIcon />,
 };

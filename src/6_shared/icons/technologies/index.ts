@@ -1,0 +1,12 @@
+export { default as FirebaseIcon } from "./Firebase";
+export { default as FSDIcon } from "./FSD";
+export { default as GraphQLIcon } from "./GraphQL";
+export { default as IonicIcon } from "./Ionic";
+export { default as MobXIcon } from "./MobX";
+export { default as NextJSIcon } from "./NextJS";
+export { default as ReactIcon } from "./React";
+export { default as ReactQueryIcon } from "./ReactQuery";
+export { default as ReduxIcon } from "./Redux";
+export { default as StorybookIcon } from "./Storybook";
+export { default as ViteIcon } from "./Vite";
+export { default as VueIcon } from "./Vue";

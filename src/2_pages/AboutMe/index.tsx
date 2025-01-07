@@ -1,11 +1,9 @@
-import React from "react";
-
-import { Footer } from "@/entities/footer";
-import { MySkills } from "@/entities/mySkills";
-import { Preview } from "@/entities/preview";
-import { Whoami } from "@/entities/whoami";
+import { Preview } from "@/pages/AboutMe/sections/preview";
+import { Skills } from "@/pages/AboutMe/sections/skills";
+import { Whoami } from "@/pages/AboutMe/sections/whoami";
 import { Tabs } from "@/shared/models/enums";
 import { Container } from "@/shared/ui";
+import { Footer } from "@/widgets/footer";
 import { Header } from "@/widgets/header";
 
 import styles from "./AboutMe.module.scss";
@@ -20,7 +18,7 @@ export default async function AboutMe() {
           <Preview />
         </div>
         <Whoami />
-        <MySkills />
+        <Skills />
       </Container>
       <Footer />
     </>
