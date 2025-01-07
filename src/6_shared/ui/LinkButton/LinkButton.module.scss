@@ -1,20 +1,18 @@
-@import "../../styles/constant.scss";
-
 .link-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    color: $primary;
-    border-radius: 32px;
-    border: $primary solid 1px;
-    transition: .3s;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: $primary;
+  border-radius: 32px;
+  border: $primary solid 1px;
+  transition: 0.3s;
+  cursor: pointer;
 
-    &:hover {
-        box-shadow: $inner-shadow;
-        border: $bloom solid 1px;
-        color: $bloom;
-    }
+  &:hover {
+    box-shadow: $inner-shadow;
+    border: $bloom solid 1px;
+    color: $bloom;
+  }
 }

@@ -1,36 +1,34 @@
-@import "../../styles/constant.scss";
-
 .page-tab-menu {
-    @extend .font-simple-1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    height: 30px;
-    color: $primary;
-    border-radius: 30px;
-    border: $primary solid 1px;
-    transition: .3s;
-    cursor: pointer;
+  @extend .font-simple-1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 30px;
+  color: $primary;
+  border-radius: 30px;
+  border: $primary solid 1px;
+  transition: 0.3s;
+  cursor: pointer;
 
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.15);
-        box-shadow: $inner-shadow;
-        border: $bloom solid 1px;
-        color: $bloom;
-    }
-}
-
-.page-tab-menu--active {
-    @extend .font-simple-1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    height: 30px;
-    border-radius: 30px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.15);
     box-shadow: $inner-shadow;
     border: $bloom solid 1px;
     color: $bloom;
-    opacity: 1;
+  }
+}
+
+.page-tab-menu--active {
+  @extend .font-simple-1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 30px;
+  border-radius: 30px;
+  box-shadow: $inner-shadow;
+  border: $bloom solid 1px;
+  color: $bloom;
+  opacity: 1;
 }

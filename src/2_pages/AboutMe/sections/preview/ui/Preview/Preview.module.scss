@@ -1,0 +1,38 @@
+.preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 60px 0px;
+  z-index: 1;
+}
+
+.preview__static-text {
+  @extend .font-display-1;
+}
+
+.preview__anim-text {
+  @extend .font-display-1;
+  width: 100%;
+
+  &::after {
+    content: "❚";
+    animation: cursor 3.5s ease 0s infinite normal none;
+  }
+
+  @keyframes cursor {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+}

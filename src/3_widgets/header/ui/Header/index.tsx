@@ -5,14 +5,16 @@ import React from "react";
 import { useTranslations } from "next-intl";
 
 import { SelectLanguage } from "@/features/languageSwitcher";
-import MenuHeader from "@/features/menuHeader/ui/MenuHeader";
+import { MenuHeader } from "@/features/menuHeader";
 import { useRouter } from "@/i18n/routing";
 import { BREAKPOINT_MINI_LAPTOP_PX } from "@/shared/config/constants";
-import useWindowWidthResize from "@/shared/hooks/useWindowWidthResize";
-import GitHubIcon from "@/shared/icons/GitHub";
-import LinkedInIcon from "@/shared/icons/LinkedIn";
-import MailIcon from "@/shared/icons/Mail";
-import TelegramIcon from "@/shared/icons/Telegram";
+import { useWindowWidthResize } from "@/shared/hooks";
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+  TelegramIcon,
+} from "@/shared/icons/social";
 import { Tabs } from "@/shared/models/enums";
 import { PageTabMenu, LinkButton, Logo } from "@/shared/ui";
 

@@ -1,0 +1,22 @@
+.card-skills {
+  border-radius: $border-radius;
+  border: 1px solid $divider;
+  background-color: $skill-bg;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  gap: 20px;
+  padding: 30px;
+}
+
+.card-skills__title {
+  @extend .font-header-2;
+}
+
+.card-skills__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,50 @@
+.my-skills {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  padding: 0 0 200px 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;
+  overflow: hidden;
+}
+
+.my-skills__title {
+  @extend .font-header-1;
+}
+
+.my-skills__wrapper-cards {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  gap: 40px;
+}
+
+.my-skills__row-1 {
+  display: grid;
+  grid-template-columns: 410px 1fr;
+  grid-column-gap: 40px;
+
+  @include laptop {
+    grid-template-columns: 1fr;
+    grid-row-gap: 40px;
+  }
+}
+
+.my-skills__row-2 {
+  display: grid;
+  grid-template-columns: 1fr 610px;
+  grid-column-gap: 40px;
+
+  @include laptop {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mini-laptop {
+    grid-template-columns: 1fr;
+    grid-row-gap: 40px;
+  }
+}

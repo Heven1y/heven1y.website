@@ -1,23 +1,21 @@
-@import "../../../../6_shared/styles/constant.scss";
-
 .select-language {
-    min-width: 120px;
+  min-width: 120px;
 }
 
 .select-language__trigger {
-    width: fit-content;
-    color: $primary;
-    height: 32px;
-    padding: 0 10px;
-    border-radius: $border-radius;
-    border: rgba(0, 0, 0, 0) solid 1px;
-    min-width: auto;
-    gap: 5px;
+  width: fit-content;
+  color: $primary;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: $border-radius;
+  border: rgba(0, 0, 0, 0) solid 1px;
+  min-width: auto;
+  gap: 5px;
 
-    &:hover {
-        background-color: $bg-color;
-        box-shadow: $inner-shadow;
-        border: $bloom solid 1px;
-        color: $bloom;
-    }
+  &:hover {
+    background-color: $bg-color;
+    box-shadow: $inner-shadow;
+    border: $bloom solid 1px;
+    color: $bloom;
+  }
 }

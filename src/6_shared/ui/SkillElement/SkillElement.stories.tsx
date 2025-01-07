@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react";
 
-import JavaScriptIcon from "@/entities/mySkills/icons/ProgramingLanguages/JavaScript";
+import { JavaScriptIcon } from "@/shared/icons/programingLanguages";
 import { BorderColorsSkills } from "@/shared/models/enums";
 
 import SkillElement from "./index";
