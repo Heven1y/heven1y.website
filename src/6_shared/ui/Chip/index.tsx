@@ -5,11 +5,19 @@ import styles from "./Chip.module.scss";
 type PropsChip = {
   label: string;
   active: boolean;
-  onChangeActive: (active: boolean) => void;
+  onChangeActive?: (active: boolean) => void;
+  isDisabled?: boolean;
 };
 
 export default function Chip(props: PropsChip) {
-  const { label, active, onChangeActive } = props;
+  const { label, active, onChangeActive, isDisabled } = props;
+
+  const handleClick = () => {
+    if (isDisabled) {
+      return;
+    }
+    onChangeActive?.(!active);
+  };
 
   const classNamesChipActive = {
     base: styles["chip--active"],
@@ -23,8 +31,9 @@ export default function Chip(props: PropsChip) {
 
   return (
     <ChipUI
+      isDisabled={isDisabled}
       classNames={active ? classNamesChipActive : classNamesChip}
-      onClick={() => onChangeActive(!active)}
+      onClick={handleClick}
     >
       {label}
     </ChipUI>

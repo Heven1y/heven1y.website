@@ -13,4 +13,5 @@ export const Primary = Template.bind({});
 Primary.args = {
   label: "Frontend",
   active: false,
+  isDisabled: false,
 };

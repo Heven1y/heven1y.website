@@ -4,7 +4,7 @@ export enum Languages {
   Japanese = "ja",
 }
 
-export enum BorderColorsSkills {
+export enum Skills {
   Git = "git",
   Jira = "jira",
   Figma = "figma",
@@ -32,6 +32,24 @@ export enum BorderColorsSkills {
   English = "english",
   Russian = "russian",
   Japanese = "japanese",
+}
+
+export enum Categories {
+  Frontend = "Frontend",
+  Backend = "Backend",
+  Design = "Design UI/UX",
+}
+
+export enum Technologies {
+  React = "React",
+  ReactNative = "React Native",
+  Ionic = "Ionic",
+  Redux = "Redux",
+  MobX = "MobX",
+  FSD = "Feature-Sliced Design",
+  ReactQuery = "React-Query",
+  Storybook = "Storybook",
+  NextJs = "Next.js",
 }
 
 export enum Tabs {

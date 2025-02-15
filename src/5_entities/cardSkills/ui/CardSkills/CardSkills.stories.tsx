@@ -14,7 +14,7 @@ import {
   ViteIcon,
   VueIcon,
 } from "@/shared/icons/technologies";
-import { BorderColorsSkills } from "@/shared/models/enums";
+import { Skills } from "@/shared/models/enums";
 import { SkillElement } from "@/shared/ui";
 
 import CardSkills from "./index";
@@ -31,52 +31,46 @@ Primary.args = {
   title: "technologies",
   children: (
     <>
-      <SkillElement name="React" borderColor={BorderColorsSkills.React}>
+      <SkillElement name="React" borderColor={Skills.React}>
         <ReactIcon />
       </SkillElement>
-      <SkillElement
-        name="React Native"
-        borderColor={BorderColorsSkills.ReactNative}
-      >
+      <SkillElement name="React Native" borderColor={Skills.ReactNative}>
         <ReactIcon />
       </SkillElement>
-      <SkillElement name="Vue" borderColor={BorderColorsSkills.Vue}>
+      <SkillElement name="Vue" borderColor={Skills.Vue}>
         <VueIcon />
       </SkillElement>
-      <SkillElement name="Ionic" borderColor={BorderColorsSkills.Ionic}>
+      <SkillElement name="Ionic" borderColor={Skills.Ionic}>
         <IonicIcon />
       </SkillElement>
-      <SkillElement name="Redux" borderColor={BorderColorsSkills.Redux}>
+      <SkillElement name="Redux" borderColor={Skills.Redux}>
         <ReduxIcon />
       </SkillElement>
-      <SkillElement name="MobX" borderColor={BorderColorsSkills.MobX}>
+      <SkillElement name="MobX" borderColor={Skills.MobX}>
         <MobXIcon />
       </SkillElement>
-      <SkillElement name="GraphQL" borderColor={BorderColorsSkills.GraphQL}>
+      <SkillElement name="GraphQL" borderColor={Skills.GraphQL}>
         <GraphQLIcon />
       </SkillElement>
-      <SkillElement name="Firebase" borderColor={BorderColorsSkills.Firebase}>
+      <SkillElement name="Firebase" borderColor={Skills.Firebase}>
         <FirebaseIcon />
       </SkillElement>
-      <SkillElement name="Next.js" borderColor={BorderColorsSkills.NextJs}>
+      <SkillElement name="Next.js" borderColor={Skills.NextJs}>
         <NextJSIcon />
       </SkillElement>
-      <SkillElement
-        name="React-Query"
-        borderColor={BorderColorsSkills.ReactQuery}
-      >
+      <SkillElement name="React-Query" borderColor={Skills.ReactQuery}>
         <ReactQueryIcon />
       </SkillElement>
       <SkillElement
         name="Feature-Sliced Design"
-        borderColor={BorderColorsSkills.FeatureSlicedDesign}
+        borderColor={Skills.FeatureSlicedDesign}
       >
         <FSDIcon />
       </SkillElement>
-      <SkillElement name="Storybook" borderColor={BorderColorsSkills.Storybook}>
+      <SkillElement name="Storybook" borderColor={Skills.Storybook}>
         <StorybookIcon />
       </SkillElement>
-      <SkillElement name="Vite" borderColor={BorderColorsSkills.Vite}>
+      <SkillElement name="Vite" borderColor={Skills.Vite}>
         <ViteIcon />
       </SkillElement>
     </>
