@@ -8,7 +8,7 @@ import {
   DropdownMenu,
   DropdownTrigger,
   Selection,
-} from "@nextui-org/react";
+} from "@heroui/react";
 
 type Item = {
   key: string;

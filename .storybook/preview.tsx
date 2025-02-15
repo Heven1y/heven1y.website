@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 
 import React from "react";
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import "../src/6_shared/styles/tailwind.css";
 import "../src/6_shared/styles/storybookGlobal.css";
 import { nextIntl } from "./next-intl";
@@ -9,9 +9,9 @@ import { nextIntl } from "./next-intl";
 const decorators = [
   (Story) => {
     return (
-      <NextUIProvider>
-          <Story />
-      </NextUIProvider>
+      <HeroUIProvider>
+        <Story />
+      </HeroUIProvider>
     );
   },
 ];

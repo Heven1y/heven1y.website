@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { Meta, StoryFn } from "@storybook/react";
 
 import { LANGUAGES } from "@/shared/config/constants";

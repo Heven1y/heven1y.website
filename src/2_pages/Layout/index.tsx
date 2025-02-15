@@ -1,6 +1,6 @@
 import React from "react";
 
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import { Raleway } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
@@ -31,11 +31,11 @@ export default async function Layout({
   return (
     <html lang={locale}>
       <body className={raleway.className}>
-        <NextUIProvider>
+        <HeroUIProvider>
           <NextIntlClientProvider messages={messages}>
             {children}
           </NextIntlClientProvider>
-        </NextUIProvider>
+        </HeroUIProvider>
       </body>
     </html>
   );

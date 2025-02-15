@@ -9,7 +9,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { useTranslations } from "next-intl";
 
 import { Tabs } from "@/shared/models/enums";
@@ -59,14 +59,14 @@ export default function MenuHeader({
         >
           <ListboxItem
             className={styles["menu-header__item"]}
-            onClick={() => handleClickItem(Tabs.about)}
+            onPress={() => handleClickItem(Tabs.about)}
             key={Tabs.about}
           >
             {t("aboutTitle")}
           </ListboxItem>
           <ListboxItem
             className={styles["menu-header__item"]}
-            onClick={() => handleClickItem(Tabs.projects)}
+            onPress={() => handleClickItem(Tabs.projects)}
             key={Tabs.projects}
           >
             {t("projectsTitle")}
