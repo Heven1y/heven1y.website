@@ -1,0 +1,15 @@
+.project__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project__header-title {
+  @extend .font-header-2;
+  -webkit-text-box-trim: trim-end;
+}
+
+.project__header-close-icon {
+  color: $primary;
+}
+
