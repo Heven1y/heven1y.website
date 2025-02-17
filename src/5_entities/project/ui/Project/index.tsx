@@ -2,6 +2,7 @@
 
 import {
   Button,
+  Link,
   Modal,
   ModalBody,
   ModalContent,
@@ -24,9 +25,9 @@ type TagsSectionProps = {
 
 function TagsSection({ type, data }: TagsSectionProps) {
   return (
-    <section>
-      <h2>{type}</h2>
-      <div>
+    <section title={type}>
+      <h2 className={styles["tags__title"]}>{type}</h2>
+      <div className={styles["tags__wrapper"]}>
         {data.map((elem, index) => (
           <Chip
             isDisabled
@@ -72,8 +73,23 @@ export default function Project(props: ProjectProps) {
                 <CloseIcon className={styles["project__header-close-icon"]} />
               </Button>
             </ModalHeader>
-            <ModalBody>
-              <article title={data.title}>
+            <ModalBody className={styles["project__body"]}>
+              {data.link && (
+                <Link
+                  href={data.link.ref}
+                  className={styles["project__link"]}
+                  underline="always"
+                  isExternal
+                  showAnchorIcon
+                  size="sm"
+                >
+                  {data.link.value}
+                </Link>
+              )}
+              <article
+                className={styles["project__article"]}
+                title={data.title}
+              >
                 {data.content.map((contentData) => {
                   return (
                     <ContentBuilder
@@ -83,8 +99,13 @@ export default function Project(props: ProjectProps) {
                     />
                   );
                 })}
-                <TagsSection type={Tags.Stack} data={data.stack} />
-                <TagsSection type={Tags.Category} data={data.categories} />
+                <section
+                  className={styles["project__tags-section"]}
+                  title="tags"
+                >
+                  <TagsSection type={Tags.Stack} data={data.stack} />
+                  <TagsSection type={Tags.Category} data={data.categories} />
+                </section>
               </article>
             </ModalBody>
           </>

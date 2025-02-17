@@ -15,6 +15,10 @@ export default {
 
 const mockData: DataProject = {
   title: "Radiant",
+  link: {
+    ref: "https://radiant-metrics.com",
+    value: "radiant-metrics.com",
+  },
   content: [
     {
       title: "Introduction",

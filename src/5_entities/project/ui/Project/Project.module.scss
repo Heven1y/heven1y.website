@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 30px 40px 0 40px;
 }
 
 .project__header-title {
@@ -13,3 +14,38 @@
   color: $primary;
 }
 
+.project__body {
+  padding: 0 40px;
+}
+
+.project__article {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+.project__link {
+  color: $bloom;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.project__tags-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tags__title {
+  @extend .font-header-2;
+  text-transform: none;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.tags__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

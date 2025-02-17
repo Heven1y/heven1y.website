@@ -27,7 +27,8 @@
 }
 
 .card-project__description {
-  @extend .font-simple-1--medium;
+  @extend .font-simple-1;
+  font-weight: 500;
   width: 100%;
   display: -webkit-box;
   -webkit-line-clamp: 2;

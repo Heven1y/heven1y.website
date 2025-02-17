@@ -19,7 +19,8 @@
 }
 
 .chip__content {
-  @extend .font-simple-1--medium;
+  @extend .font-simple-1;
+  font-weight: 500;
   color: $bloom;
   padding: 0;
   cursor: pointer;

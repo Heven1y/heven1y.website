@@ -5,6 +5,8 @@ import { Image } from "@heroui/react";
 import { Sections } from "../../model/enums";
 import { ProjectContent } from "../../model/types";
 
+import styles from "./ContentBuilder.module.scss";
+
 type ContentBuilderProps = {
   data: ProjectContent;
   projectName: string;
@@ -12,31 +14,51 @@ type ContentBuilderProps = {
 
 export function ContentBuilder({ data }: ContentBuilderProps) {
   return (
-    <section title={data.title}>
-      <h2>{data.title}</h2>
+    <section className={styles["content-builder"]} title={data.title}>
+      <h2 className={styles["content-builder__title"]}>{data.title}</h2>
       {data.sections.map((section, indexSection) => {
         switch (section.type) {
           case Sections.List:
             return (
-              <section key={indexSection}>
-                {section.subtitle && <p>{section.subtitle}</p>}
-                <ul>
+              <section
+                className={styles["content-builder__section"]}
+                key={indexSection}
+              >
+                {section.subtitle && (
+                  <p className={styles["content-builder__subtitle-list"]}>
+                    {section.subtitle}
+                  </p>
+                )}
+                <ul className={styles["content-builder__list"]}>
                   {section.list.map((element, indexElem) => (
-                    <li key={indexElem}>{element}</li>
+                    <li
+                      className={styles["content-builder__list-elem"]}
+                      key={indexElem}
+                    >
+                      {element}
+                    </li>
                   ))}
                 </ul>
               </section>
             );
           case Sections.Paragraph:
             return (
-              <section key={indexSection}>
-                <p>{section.content}</p>
+              <section
+                className={styles["content-builder__section"]}
+                key={indexSection}
+              >
+                <p className={styles["content-builder__paragraph"]}>
+                  {section.content}
+                </p>
               </section>
             );
           // TODO: Change to Next Image
           case Sections.Image:
             return (
-              <section key={indexSection}>
+              <section
+                className={styles["content-builder__section"]}
+                key={indexSection}
+              >
                 <Image isBlurred src={section.src} alt={section.alt} />
               </section>
             );

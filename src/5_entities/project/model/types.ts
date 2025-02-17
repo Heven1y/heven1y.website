@@ -32,6 +32,10 @@ export type ProjectContent = {
 
 export type DataProject = {
   title: string;
+  link?: {
+    ref: string;
+    value: string;
+  };
   content: ProjectContent[];
   categories: ProjectTag[];
   stack: ProjectTag[];

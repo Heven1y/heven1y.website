@@ -19,16 +19,6 @@ $inner-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.25) inset;
   }
 }
 
-.font-simple-1--medium {
-  font-size: 1rem;
-  font-weight: 500;
-  font-variant-numeric: lining-nums;
-
-  @include mobile {
-    font-size: 0.9rem;
-  }
-}
-
 .font-simple-2 {
   font-size: 2.5rem;
   font-weight: 300;
@@ -44,6 +34,17 @@ $inner-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.25) inset;
 
   @include mobile {
     font-size: 1.6rem;
+  }
+}
+
+.font-simple-3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-variant-numeric: lining-nums;
+  line-height: 1.75rem;
+
+  @include mobile {
+    font-size: 0.9rem;
   }
 }
 
