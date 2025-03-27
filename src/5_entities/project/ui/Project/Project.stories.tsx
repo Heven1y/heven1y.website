@@ -15,13 +15,16 @@ export default {
 
 const mockData: DataProject = {
   title: "Radiant",
+  year: 2025,
+  shortDescription: "short description",
+  colors: [],
   link: {
     ref: "https://radiant-metrics.com",
     value: "radiant-metrics.com",
   },
   content: [
     {
-      title: "Introduction",
+      header: "Introduction",
       sections: [
         {
           type: Sections.Paragraph,
@@ -41,14 +44,8 @@ const mockData: DataProject = {
       ],
     },
   ],
-  categories: [
-    { active: true, label: Categories.Design },
-    { active: false, label: Categories.Frontend },
-  ],
-  stack: [
-    { active: true, label: Technologies.React },
-    { active: false, label: Technologies.NextJs },
-  ],
+  categories: [Categories.Design, Categories.Frontend],
+  stack: [Technologies.React, Technologies.NextJs],
 };
 
 const Template: StoryFn<typeof Project> = (args) => <Project {...args} />;

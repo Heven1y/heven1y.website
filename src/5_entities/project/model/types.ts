@@ -2,11 +2,6 @@ import { Categories, Technologies } from "@/shared/models/enums";
 
 import { Sections } from "./enums";
 
-export type ProjectTag = {
-  active: boolean;
-  label: Categories | Technologies;
-};
-
 type ListSection = {
   type: Sections.List;
   subtitle?: string;
@@ -26,17 +21,21 @@ type ImageSection = {
 };
 
 export type ProjectContent = {
-  title: string;
+  header: string;
   sections: (ListSection | ParagraphSection | ImageSection)[];
 };
 
 export type DataProject = {
   title: string;
+  year: number;
+  shortDescription: string;
+  colors: string[];
+  img?: string;
   link?: {
     ref: string;
     value: string;
   };
   content: ProjectContent[];
-  categories: ProjectTag[];
-  stack: ProjectTag[];
+  categories: Categories[];
+  stack: Technologies[];
 };

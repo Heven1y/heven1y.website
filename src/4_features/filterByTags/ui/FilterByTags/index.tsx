@@ -3,15 +3,15 @@
 import { useTranslations } from "next-intl";
 
 import { Tags } from "@/entities/project/model/enums";
-import { ProjectTag } from "@/entities/project/model/types";
+import { Categories, Technologies } from "@/shared/models/enums";
 import { Chip } from "@/shared/ui";
 
 import styles from "./FilterByTags.module.scss";
 
 type FilterByTagsProps = {
   type: Tags;
-  tags: ProjectTag[];
-  onChangeStateTag: (label: string) => void;
+  tags: Map<Categories | Technologies, boolean>;
+  onChangeStateTag: (tag: Categories | Technologies) => void;
 };
 
 export default function FilterByTags({
@@ -25,12 +25,12 @@ export default function FilterByTags({
     <div className={styles["filter-by-tags__wrapper"]}>
       <h4 className={styles["filter-by-tags__title"]}>{t(type)}</h4>
       <div className={styles["filter-by-tags__wrapper-tags"]}>
-        {tags.map((tag) => (
+        {Array.from(tags.entries()).map(([tag, isActive]) => (
           <Chip
-            key={tag.label}
-            active={tag.active}
-            label={tag.label}
-            onChangeActive={() => onChangeStateTag(tag.label)}
+            key={tag}
+            active={isActive}
+            label={tag}
+            onChangeActive={() => onChangeStateTag(tag)}
           />
         ))}
       </div>

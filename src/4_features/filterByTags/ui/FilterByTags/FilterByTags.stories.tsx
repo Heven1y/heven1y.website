@@ -18,10 +18,10 @@ const Template: StoryFn<typeof FilterByTags> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   type: Tags.Category,
-  tags: [
-    { label: Categories.Design, active: true },
-    { label: Categories.Frontend, active: false },
-    { label: Categories.Backend, active: false },
-  ],
+  tags: new Map([
+    [Categories.Design, true],
+    [Categories.Frontend, false],
+    [Categories.Backend, false],
+  ]),
   onChangeStateTag: action("onChangeStateTag"),
 };

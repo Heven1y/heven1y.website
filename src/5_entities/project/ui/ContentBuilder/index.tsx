@@ -14,8 +14,8 @@ type ContentBuilderProps = {
 
 export function ContentBuilder({ data }: ContentBuilderProps) {
   return (
-    <section className={styles["content-builder"]} title={data.title}>
-      <h2 className={styles["content-builder__title"]}>{data.title}</h2>
+    <section className={styles["content-builder"]} title={data.header}>
+      <h2 className={styles["content-builder__title"]}>{data.header}</h2>
       {data.sections.map((section, indexSection) => {
         switch (section.type) {
           case Sections.List:

@@ -8,18 +8,13 @@ import { Chip } from "@/shared/ui";
 
 import styles from "./CardProject.module.scss";
 
-type CardCategory = {
-  label: Categories;
-  active: boolean;
-};
-
 type CardProjectProps = {
   onClick?: () => void;
   srcImg?: string;
   colors: string[];
   title: string;
   description: string;
-  categories: CardCategory[];
+  categories: Map<Categories, boolean>;
 };
 
 export default function CardProject(props: CardProjectProps) {
@@ -58,12 +53,12 @@ export default function CardProject(props: CardProjectProps) {
         <h4 className={styles["card-project__title"]}>{title}</h4>
         <p className={styles["card-project__description"]}>{description}</p>
         <div className={styles["card-project__categories"]}>
-          {categories.map((category) => (
+          {Array.from(categories.entries()).map(([category, isActive]) => (
             <Chip
               isDisabled
-              key={category.label}
-              label={category.label}
-              active={category.active}
+              key={category}
+              label={category}
+              active={isActive}
             />
           ))}
         </div>

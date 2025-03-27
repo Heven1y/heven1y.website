@@ -2,25 +2,31 @@
 
 import {
   Button,
+  CircularProgress,
   Link,
   Modal,
   ModalBody,
   ModalContent,
   ModalHeader,
+  Skeleton,
 } from "@heroui/react";
 
 import { CloseIcon } from "@/shared/icons/interface";
+import { Categories, Technologies } from "@/shared/models/enums";
 import { Chip } from "@/shared/ui";
 
 import { Tags } from "../../model/enums";
-import { DataProject, ProjectTag } from "../../model/types";
+import { DataProject } from "../../model/types";
 import { ContentBuilder } from "../ContentBuilder";
 
 import styles from "./Project.module.scss";
 
 type TagsSectionProps = {
   type: Tags;
-  data: ProjectTag[];
+  data: {
+    active: boolean;
+    label: Categories | Technologies;
+  }[];
 };
 
 function TagsSection({ type, data }: TagsSectionProps) {
@@ -44,11 +50,25 @@ function TagsSection({ type, data }: TagsSectionProps) {
 type ProjectProps = {
   isShow: boolean;
   onHide: () => void;
-  data: DataProject;
+  data?: DataProject;
+  filters?: {
+    categories: Categories[];
+    stack: Technologies[];
+  };
 };
 
 export default function Project(props: ProjectProps) {
-  const { isShow, onHide, data } = props;
+  const { isShow, onHide, data, filters } = props;
+
+  const prepareTagsData = (
+    tags: Categories[] | Technologies[],
+    filterTags?: Categories[] | Technologies[],
+  ) => {
+    return tags.map((tag) => ({
+      active: filterTags ? filterTags.includes(tag as never) : false,
+      label: tag,
+    }));
+  };
 
   return (
     <Modal
@@ -62,7 +82,13 @@ export default function Project(props: ProjectProps) {
         {(onClose) => (
           <>
             <ModalHeader className={styles["project__header"]}>
-              <h1 className={styles["project__header-title"]}>{data.title}</h1>
+              {data ? (
+                <h1 className={styles["project__header-title"]}>
+                  {data.title}
+                </h1>
+              ) : (
+                <Skeleton className="h-3 w-4/5 rounded-lg" />
+              )}
               <Button
                 onPress={onClose}
                 isIconOnly
@@ -74,39 +100,54 @@ export default function Project(props: ProjectProps) {
               </Button>
             </ModalHeader>
             <ModalBody className={styles["project__body"]}>
-              {data.link && (
-                <Link
-                  href={data.link.ref}
-                  className={styles["project__link"]}
-                  underline="always"
-                  isExternal
-                  showAnchorIcon
-                  size="sm"
-                >
-                  {data.link.value}
-                </Link>
+              {data ? (
+                <>
+                  {data.link && (
+                    <Link
+                      href={data.link.ref}
+                      className={styles["project__link"]}
+                      underline="always"
+                      isExternal
+                      showAnchorIcon
+                      size="sm"
+                    >
+                      {data.link.value}
+                    </Link>
+                  )}
+                  <article
+                    className={styles["project__article"]}
+                    title={data.title}
+                  >
+                    {data.content.map((contentData) => {
+                      return (
+                        <ContentBuilder
+                          key={contentData.header}
+                          data={contentData}
+                          projectName={data.title}
+                        />
+                      );
+                    })}
+                    <section
+                      className={styles["project__tags-section"]}
+                      title="tags"
+                    >
+                      <TagsSection
+                        type={Tags.Stack}
+                        data={prepareTagsData(data.stack, filters?.stack)}
+                      />
+                      <TagsSection
+                        type={Tags.Category}
+                        data={prepareTagsData(
+                          data.categories,
+                          filters?.categories,
+                        )}
+                      />
+                    </section>
+                  </article>
+                </>
+              ) : (
+                <CircularProgress aria-label="Loading" />
               )}
-              <article
-                className={styles["project__article"]}
-                title={data.title}
-              >
-                {data.content.map((contentData) => {
-                  return (
-                    <ContentBuilder
-                      key={contentData.title}
-                      data={contentData}
-                      projectName={data.title}
-                    />
-                  );
-                })}
-                <section
-                  className={styles["project__tags-section"]}
-                  title="tags"
-                >
-                  <TagsSection type={Tags.Stack} data={data.stack} />
-                  <TagsSection type={Tags.Category} data={data.categories} />
-                </section>
-              </article>
             </ModalBody>
           </>
         )}
