@@ -20,10 +20,10 @@ Primary.args = {
   title: "Radiant",
   description:
     "Web application for tracking activity on a project (Similar to Tempo).",
-  categories: [
-    { label: Categories.Design, active: true },
-    { label: Categories.Frontend, active: false },
-    { label: Categories.Backend, active: false },
-  ],
+  categories: new Map([
+    [Categories.Design, true],
+    [Categories.Frontend, false],
+    [Categories.Backend, false],
+  ]),
   onClick: action("onClick"),
 };

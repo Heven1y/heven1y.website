@@ -2,11 +2,14 @@
 
 import React from "react";
 
+import { useTranslations } from "next-intl";
+
 import { CardProject } from "@/entities/cardProject";
 import { Project } from "@/entities/project";
 import { Tags } from "@/entities/project/model/enums";
 import { DataProject } from "@/entities/project/model/types";
 import { FilterByTags } from "@/features/filterByTags";
+import { useMapState } from "@/shared/hooks/useMapState";
 import { Categories, Technologies } from "@/shared/models/enums";
 
 import { dataProjects } from "../../model/dataProjects";
@@ -27,20 +30,27 @@ export default function ProjectList() {
     null,
   );
 
-  const filterCategories: Map<Categories, boolean> = INITIAL_CATEGORIES;
-  const filterTechnologies: Map<Technologies, boolean> = INITIAL_TECHNOLOGIES;
+  const t = useTranslations("pages_ProjectList");
 
-  const getActiveTags = (tags: Map<Categories | Technologies, boolean>) => {
+  const { map: filterCategories, set: setCategory } = useMapState<
+    Categories,
+    boolean
+  >(INITIAL_CATEGORIES);
+
+  const { map: filterTechnologies, set: setTechnology } = useMapState<
+    Technologies,
+    boolean
+  >(INITIAL_TECHNOLOGIES);
+
+  const getActiveTags = <T extends string>(tags: Map<T, boolean>): T[] => {
     return Array.from(tags.entries())
       .filter(([, isActive]) => isActive)
       .map(([tag]) => tag);
   };
 
-  const getProjectsByYear = () => {
-    const activeCategories = getActiveTags(filterCategories) as Categories[];
-    const activeTechnologies = getActiveTags(
-      filterTechnologies,
-    ) as Technologies[];
+  const sortedAndFilteredProjects = React.useMemo(() => {
+    const activeCategories = getActiveTags(filterCategories);
+    const activeTechnologies = getActiveTags(filterTechnologies);
 
     const filteredProjects = dataProjects.filter((project) => {
       const matchCategories =
@@ -55,6 +65,7 @@ export default function ProjectList() {
 
       return matchCategories && matchTechnologies;
     });
+
     const projectsByYear: Map<number, DataProject[]> = new Map();
 
     for (const project of filteredProjects) {
@@ -66,7 +77,7 @@ export default function ProjectList() {
     }
 
     return projectsByYear;
-  };
+  }, [filterCategories, filterTechnologies]);
 
   const getCategoriesToMap = (categories: Categories[]) => {
     return new Map(
@@ -76,17 +87,17 @@ export default function ProjectList() {
     );
   };
 
-  const onFilterTags = (tag: Categories | Technologies) => {
-    if (tag in Categories) {
+  const onFilterTags = <T extends string>(tag: T) => {
+    if (Object.values(Categories).includes(tag as Categories)) {
       const prevValue = filterCategories.get(tag as Categories);
       if (prevValue !== undefined) {
-        filterCategories.set(tag as Categories, !prevValue);
+        setCategory(tag as Categories, !prevValue);
       }
     }
-    if (tag in Technologies) {
+    if (Object.values(Technologies).includes(tag as Technologies)) {
       const prevValue = filterTechnologies.get(tag as Technologies);
       if (prevValue !== undefined) {
-        filterTechnologies.set(tag as Technologies, !prevValue);
+        setTechnology(tag as Technologies, !prevValue);
       }
     }
   };
@@ -94,18 +105,18 @@ export default function ProjectList() {
   return (
     <>
       <div className={styles["project-list__wrapper"]}>
-        {Array.from(getProjectsByYear()).map(([year, projectsList]) => {
+        {Array.from(sortedAndFilteredProjects).map(([year, projectsList]) => {
           return (
-            <div key={year}>
+            <div className={styles["project-list__period"]} key={year}>
               <YearDivider year={year} />
-              <div>
+              <div className={styles["project-list__list"]}>
                 {projectsList.map((project) => {
                   return (
                     <CardProject
                       key={project.title}
                       colors={project.colors}
                       title={project.title}
-                      description={project.shortDescription}
+                      description={t(project.shortDescription)}
                       categories={getCategoriesToMap(project.categories)}
                       onClick={() => setOpenProject(project)}
                     />
@@ -115,7 +126,7 @@ export default function ProjectList() {
             </div>
           );
         })}
-        <div>
+        <div className={styles["project-list__filters"]}>
           <FilterByTags
             type={Tags.Category}
             tags={filterCategories}
@@ -131,7 +142,7 @@ export default function ProjectList() {
       <Project
         isShow={openProject !== null}
         onHide={() => setOpenProject(null)}
-        data={openProject ?? undefined}
+        data={openProject}
         filters={{
           categories: getActiveTags(filterCategories) as Categories[],
           stack: getActiveTags(filterTechnologies) as Technologies[],

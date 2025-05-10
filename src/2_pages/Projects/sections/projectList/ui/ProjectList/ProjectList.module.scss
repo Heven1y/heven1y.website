@@ -1,0 +1,19 @@
+.project-list__wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+.project-list__filters {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex-shrink: 0;
+}
+
+.project-list__period {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}

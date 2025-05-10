@@ -15,17 +15,15 @@ export default async function Projects({
 }) {
   const t = await getTranslations({ locale, namespace: "pages_Projects" });
   return (
-    <div className={styles.wrapper}>
+    <>
       <Container>
-        <div className={styles["wrapper__preview"]}>
-          <Header activeTabId={Tabs.projects} />
-          <div className={styles["wrapper__header-wrapper"]}>
-            <h1 className={styles["wrapper__header"]}>{t("header")}</h1>
-            <ProjectList />
-          </div>
+        <Header activeTabId={Tabs.projects} />
+        <div className={styles["projects__content-wrapper"]}>
+          <h1 className={styles["projects__header"]}>{t("header")}</h1>
+          <ProjectList />
         </div>
       </Container>
       <Footer />
-    </div>
+    </>
   );
 }

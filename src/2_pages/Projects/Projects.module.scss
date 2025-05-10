@@ -1,17 +1,12 @@
-.wrapper__preview {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  min-height: 100vh;
-  padding: 0;
-}
-
-.wrapper__header-wrapper {
+.projects__content-wrapper {
   width: 100%;
   height: fit-content;
   display: flex;
   padding: 60px 0;
+  flex-direction: column;
+  gap: 60px;
 }
 
-.wrapper__header {
+.projects__header {
   @extend .font-display-1;
 }

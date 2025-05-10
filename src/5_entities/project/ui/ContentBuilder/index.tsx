@@ -1,6 +1,8 @@
 "use client";
 
 import { Image } from "@heroui/react";
+import NextImage from "next/image";
+import { useTranslations } from "next-intl";
 
 import { Sections } from "../../model/enums";
 import { ProjectContent } from "../../model/types";
@@ -13,9 +15,10 @@ type ContentBuilderProps = {
 };
 
 export function ContentBuilder({ data }: ContentBuilderProps) {
+  const t = useTranslations("entities_ContentBuilder");
   return (
-    <section className={styles["content-builder"]} title={data.header}>
-      <h2 className={styles["content-builder__title"]}>{data.header}</h2>
+    <section className={styles["content-builder"]} title={t(data.header)}>
+      <h2 className={styles["content-builder__title"]}>{t(data.header)}</h2>
       {data.sections.map((section, indexSection) => {
         switch (section.type) {
           case Sections.List:
@@ -26,7 +29,7 @@ export function ContentBuilder({ data }: ContentBuilderProps) {
               >
                 {section.subtitle && (
                   <p className={styles["content-builder__subtitle-list"]}>
-                    {section.subtitle}
+                    {t(section.subtitle)}
                   </p>
                 )}
                 <ul className={styles["content-builder__list"]}>
@@ -35,7 +38,7 @@ export function ContentBuilder({ data }: ContentBuilderProps) {
                       className={styles["content-builder__list-elem"]}
                       key={indexElem}
                     >
-                      {element}
+                      {t(element)}
                     </li>
                   ))}
                 </ul>
@@ -48,18 +51,22 @@ export function ContentBuilder({ data }: ContentBuilderProps) {
                 key={indexSection}
               >
                 <p className={styles["content-builder__paragraph"]}>
-                  {section.content}
+                  {t(section.content)}
                 </p>
               </section>
             );
-          // TODO: Change to Next Image
           case Sections.Image:
             return (
               <section
                 className={styles["content-builder__section"]}
                 key={indexSection}
               >
-                <Image isBlurred src={section.src} alt={section.alt} />
+                <Image
+                  as={NextImage}
+                  isBlurred
+                  src={section.src}
+                  alt={section.alt}
+                />
               </section>
             );
           default:

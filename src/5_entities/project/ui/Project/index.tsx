@@ -10,6 +10,7 @@ import {
   ModalHeader,
   Skeleton,
 } from "@heroui/react";
+import { useTranslations } from "next-intl";
 
 import { CloseIcon } from "@/shared/icons/interface";
 import { Categories, Technologies } from "@/shared/models/enums";
@@ -25,14 +26,15 @@ type TagsSectionProps = {
   type: Tags;
   data: {
     active: boolean;
-    label: Categories | Technologies;
+    label: string;
   }[];
 };
 
 function TagsSection({ type, data }: TagsSectionProps) {
+  const t = useTranslations("features_FilterByTags");
   return (
-    <section title={type}>
-      <h2 className={styles["tags__title"]}>{type}</h2>
+    <section title={t(type)}>
+      <h2 className={styles["tags__title"]}>{t(type)}</h2>
       <div className={styles["tags__wrapper"]}>
         {data.map((elem, index) => (
           <Chip
@@ -50,7 +52,7 @@ function TagsSection({ type, data }: TagsSectionProps) {
 type ProjectProps = {
   isShow: boolean;
   onHide: () => void;
-  data?: DataProject;
+  data: DataProject | null;
   filters?: {
     categories: Categories[];
     stack: Technologies[];
@@ -60,12 +62,9 @@ type ProjectProps = {
 export default function Project(props: ProjectProps) {
   const { isShow, onHide, data, filters } = props;
 
-  const prepareTagsData = (
-    tags: Categories[] | Technologies[],
-    filterTags?: Categories[] | Technologies[],
-  ) => {
+  const prepareTagsData = <T extends string>(tags: T[], filterTags?: T[]) => {
     return tags.map((tag) => ({
-      active: filterTags ? filterTags.includes(tag as never) : false,
+      active: filterTags ? filterTags.includes(tag) : false,
       label: tag,
     }));
   };
@@ -133,11 +132,14 @@ export default function Project(props: ProjectProps) {
                     >
                       <TagsSection
                         type={Tags.Stack}
-                        data={prepareTagsData(data.stack, filters?.stack)}
+                        data={prepareTagsData<Technologies>(
+                          data.stack,
+                          filters?.stack,
+                        )}
                       />
                       <TagsSection
                         type={Tags.Category}
-                        data={prepareTagsData(
+                        data={prepareTagsData<Categories>(
                           data.categories,
                           filters?.categories,
                         )}

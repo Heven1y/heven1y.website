@@ -1,32 +1,5 @@
 {
   "radiant" : {
-    "shortDescription": "Web applications for camera calibration.",
-    "aboutProject": {
-      "header": "About the Project",
-      "paragraph": "This project was a web application designed for calibrating various types of cameras, including DSLR cameras, mobile device cameras, medical cameras, and other specialized imaging devices. The main goal was to provide users with an intuitive tool for precisely adjusting their cameras through sequential image analysis and calculations."
-    },
-    "calibrationProcess": {
-      "header": "Calibration Process",
-      "subheader": "The calibration process consisted of several steps:",
-      "list": [
-        "Entering monitor data – Users specified their screen size and resolution to ensure accurate scaling of test patterns.",
-        "Generating patterns – The system created black-and-white templates with QR codes in the center to help the program identify the order of frames.",
-        "Recording the calibration process – Users started a presentation on the website, where the patterns changed every second. They recorded this process using their camera while keeping it fixed on a tripod.",
-        "Uploading photos or videos – Users uploaded the recorded footage to the system. Multiple recordings from different angles were required for precise calibration.",
-        "Analyzing camera positions – The system identified the camera positions based on the uploaded files, allowing users to manually adjust the data if necessary.",
-        "Final calibration – The server processed the data and displayed statistics as graphs and downloadable reports in various formats."
-      ]
-    },
-    "challenges": {
-      "header": "Key Challenges and Solutions",
-      "paragraphs": [
-        "One of the main challenges was designing an intuitive interface for the calibration process. Since the procedure required high precision, the UI had to guide users through the complex setup steps seamlessly.",
-        "I was involved in integrating SSO via Keycloak and implemented polling to ensure the correct display of calibration statuses while users interacted with the system."
-      ]
-    },
-    "commercial": {
-      "header": "Commercial Application",
-      "paragraph": "This project was developed as a commercial product aimed at providing a simplified and more precise camera calibration method. The goal was to market it as an innovative solution for professionals in 3D modeling, medicine, and other high-precision fields."
-    }
+    "shortDescription": "Web applications for camera calibration."
   }
 }
