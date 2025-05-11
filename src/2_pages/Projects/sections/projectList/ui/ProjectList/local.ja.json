@@ -1,5 +1,20 @@
 {
   "radiant" : {
     "shortDescription": "カメラのキャリブレーションを行うウェブアプリケーション。"
+  },
+  "ciCraft": {
+    "shortDescription": "ビジュアル構築で漢字を学べるゲームです。"
+  },
+  "bretzel": {
+    "shortDescription": "イベントや従業員の日常的なニーズに対応した社内向けフード注文アプリ。"
+  },
+  "squadReady": {
+    "shortDescription": "アウトソーシング開発会社のランディングページ。"
+  },
+  "kanxiKeys": {
+    "shortDescription": "214個の康熙部首のインタラクティブ表。"
+  },
+  "planyway": {
+    "shortDescription": "タスクと時間管理のためのウェブアプリ。"
   }
 }

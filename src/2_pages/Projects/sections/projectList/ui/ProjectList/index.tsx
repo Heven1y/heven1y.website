@@ -105,27 +105,29 @@ export default function ProjectList() {
   return (
     <>
       <div className={styles["project-list__wrapper"]}>
-        {Array.from(sortedAndFilteredProjects).map(([year, projectsList]) => {
-          return (
-            <div className={styles["project-list__period"]} key={year}>
-              <YearDivider year={year} />
-              <div className={styles["project-list__list"]}>
-                {projectsList.map((project) => {
-                  return (
-                    <CardProject
-                      key={project.title}
-                      colors={project.colors}
-                      title={project.title}
-                      description={t(project.shortDescription)}
-                      categories={getCategoriesToMap(project.categories)}
-                      onClick={() => setOpenProject(project)}
-                    />
-                  );
-                })}
+        <div className={styles["project-list__periods"]}>
+          {Array.from(sortedAndFilteredProjects).map(([year, projectsList]) => {
+            return (
+              <div className={styles["project-list__period"]} key={year}>
+                <YearDivider year={year} />
+                <div className={styles["project-list__list"]}>
+                  {projectsList.map((project) => {
+                    return (
+                      <CardProject
+                        key={project.title}
+                        colors={project.colors}
+                        title={project.title}
+                        description={t(project.shortDescription)}
+                        categories={getCategoriesToMap(project.categories)}
+                        onClick={() => setOpenProject(project)}
+                      />
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
         <div className={styles["project-list__filters"]}>
           <FilterByTags
             type={Tags.Category}

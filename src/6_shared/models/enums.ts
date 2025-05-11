@@ -41,8 +41,8 @@ export enum Categories {
 }
 
 export enum Technologies {
-  React = "React",
-  ReactNative = "React Native",
+  ReactSPA = "React SPA",
+  Angular = "Angular",
   Ionic = "Ionic",
   Redux = "Redux",
   MobX = "MobX",
