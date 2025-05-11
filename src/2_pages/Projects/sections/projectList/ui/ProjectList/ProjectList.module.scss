@@ -1,0 +1,49 @@
+.project-list__wrapper {
+  display: flex;
+  gap: 40px;
+
+  @include mini-laptop {
+    flex-direction: column-reverse;
+  }
+}
+
+.project-list__filters {
+  width: 300px;
+  position: sticky;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex-shrink: 0;
+  height: fit-content;
+
+  @include mini-laptop {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+}
+
+.project-list__period {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project-list__periods {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project-list__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+
+  @include medium-laptop {
+    grid-template-columns: 1fr;
+  }
+}

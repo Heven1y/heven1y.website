@@ -8,34 +8,31 @@ import {
   SplineIcon,
   TildaIcon,
 } from "@/shared/icons/softwareAndTools";
-import { BorderColorsSkills } from "@/shared/models/enums";
+import { Skills } from "@/shared/models/enums";
 import { SkillElement } from "@/shared/ui";
 
 export default function SoftwareAndToolsCard({ title }: { title: string }) {
   return (
     <CardSkills title={title}>
-      <SkillElement name="Git" borderColor={BorderColorsSkills.Git}>
+      <SkillElement name="Git" borderColor={Skills.Git}>
         <GitIcon />
       </SkillElement>
-      <SkillElement name="Jira" borderColor={BorderColorsSkills.Jira}>
+      <SkillElement name="Jira" borderColor={Skills.Jira}>
         <JiraIcon />
       </SkillElement>
-      <SkillElement name="Figma" borderColor={BorderColorsSkills.Figma}>
+      <SkillElement name="Figma" borderColor={Skills.Figma}>
         <FigmaIcon />
       </SkillElement>
-      <SkillElement name="Bitbucket" borderColor={BorderColorsSkills.Bitbucket}>
+      <SkillElement name="Bitbucket" borderColor={Skills.Bitbucket}>
         <BitbacketIcon />
       </SkillElement>
-      <SkillElement
-        name="Android Studio"
-        borderColor={BorderColorsSkills.AndroidStudio}
-      >
+      <SkillElement name="Android Studio" borderColor={Skills.AndroidStudio}>
         <AndroidStudioIcon />
       </SkillElement>
-      <SkillElement name="Spline" borderColor={BorderColorsSkills.Spline}>
+      <SkillElement name="Spline" borderColor={Skills.Spline}>
         <SplineIcon />
       </SkillElement>
-      <SkillElement name="Tilda" borderColor={BorderColorsSkills.Tilda}>
+      <SkillElement name="Tilda" borderColor={Skills.Tilda}>
         <TildaIcon />
       </SkillElement>
     </CardSkills>

@@ -4,6 +4,12 @@
   }
 }
 
+@mixin medium-laptop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
 @mixin mini-laptop {
   @media (max-width: 1000px) {
     @content;

@@ -1,0 +1,17 @@
+.filter-by-tags__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  height: fit-content;
+}
+
+.filter-by-tags__title {
+  @extend .font-header-2;
+}
+
+.filter-by-tags__wrapper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

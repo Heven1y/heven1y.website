@@ -5,28 +5,22 @@ import {
   JavaScriptIcon,
   TypeScriptIcon,
 } from "@/shared/icons/programingLanguages";
-import { BorderColorsSkills } from "@/shared/models/enums";
+import { Skills } from "@/shared/models/enums";
 import { SkillElement } from "@/shared/ui";
 
 export default function ProgrammingLanguagesCard({ title }: { title: string }) {
   return (
     <CardSkills title={title}>
-      <SkillElement
-        name="JavaScript"
-        borderColor={BorderColorsSkills.JavaScript}
-      >
+      <SkillElement name="JavaScript" borderColor={Skills.JavaScript}>
         <JavaScriptIcon />
       </SkillElement>
-      <SkillElement
-        name="TypeScript"
-        borderColor={BorderColorsSkills.TypeScript}
-      >
+      <SkillElement name="TypeScript" borderColor={Skills.TypeScript}>
         <TypeScriptIcon />
       </SkillElement>
-      <SkillElement name="Java" borderColor={BorderColorsSkills.Java}>
+      <SkillElement name="Java" borderColor={Skills.Java}>
         <JavaIcon />
       </SkillElement>
-      <SkillElement name="C#" borderColor={BorderColorsSkills.CSharp}>
+      <SkillElement name="C#" borderColor={Skills.CSharp}>
         <CSharpIcon />
       </SkillElement>
     </CardSkills>

@@ -1,0 +1,20 @@
+{
+  "radiant" : {
+    "shortDescription": "Web applications for camera calibration."
+  },
+  "ciCraft": {
+    "shortDescription": "A game for learning Chinese characters through a visual builder."
+  },
+  "bretzel": {
+    "shortDescription": "A corporate app for ordering food for events and employees’ daily needs."
+  },
+  "squadReady": {
+    "shortDescription": "Outsource software development landing page."
+  },
+  "kanxiKeys": {
+    "shortDescription": "Interactive table of 214 Kangxi radicals."
+  },
+  "planyway": {
+    "shortDescription": "Web app for task and time management."
+  }
+}

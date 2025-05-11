@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Button, Selection } from "@nextui-org/react";
+import { Button, Selection } from "@heroui/react";
 import { useLocale } from "next-intl";
 
 import { usePathname, useRouter } from "@/i18n/routing";

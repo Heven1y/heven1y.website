@@ -2,7 +2,7 @@ import React from "react";
 
 import classNames from "classnames";
 
-import { BorderColorsSkills } from "@/shared/models/enums";
+import { Skills } from "@/shared/models/enums";
 
 import styles from "./SkillElement.module.scss";
 
@@ -12,7 +12,7 @@ export default function SkillElement({
   name,
 }: {
   children: React.ReactNode;
-  borderColor: BorderColorsSkills;
+  borderColor: Skills;
   name: string;
 }) {
   const classSkillElement = classNames(

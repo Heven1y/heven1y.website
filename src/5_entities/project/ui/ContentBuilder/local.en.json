@@ -1,0 +1,174 @@
+{
+  "radiant" : {
+    "aboutProject": {
+      "header": "About the Project",
+      "paragraph": "This project was a web application designed for calibrating various types of cameras, including DSLR cameras, mobile device cameras, medical cameras, and other specialized imaging devices. The main goal was to provide users with an intuitive tool for precisely adjusting their cameras through sequential image analysis and calculations."
+    },
+    "calibrationProcess": {
+      "header": "Calibration Process",
+      "subheader": "The calibration process consisted of several steps:",
+      "list": [
+        "Entering monitor data – Users specified their screen size and resolution to ensure accurate scaling of test patterns.",
+        "Generating patterns – The system created black-and-white templates with QR codes in the center to help the program identify the order of frames.",
+        "Recording the calibration process – Users started a presentation on the website, where the patterns changed every second. They recorded this process using their camera while keeping it fixed on a tripod.",
+        "Uploading photos or videos – Users uploaded the recorded footage to the system. Multiple recordings from different angles were required for precise calibration.",
+        "Analyzing camera positions – The system identified the camera positions based on the uploaded files, allowing users to manually adjust the data if necessary.",
+        "Final calibration – The server processed the data and displayed statistics as graphs and downloadable reports in various formats."
+      ]
+    },
+    "challenges": {
+      "header": "Key Challenges and Solutions",
+      "paragraphs": [
+        "One of the main challenges was designing an intuitive interface for the calibration process. Since the procedure required high precision, the UI had to guide users through the complex setup steps seamlessly.",
+        "I was involved in integrating SSO via Keycloak and implemented polling to ensure the correct display of calibration statuses while users interacted with the system."
+      ]
+    },
+    "commercial": {
+      "header": "Commercial Application",
+      "paragraph": "This project was developed as a commercial product aimed at providing a simplified and more precise camera calibration method. The goal was to market it as an innovative solution for professionals in 3D modeling, medicine, and other high-precision fields."
+    }
+  },
+  "ciCraft": {
+    "aboutProject": {
+      "header": "About the project",
+      "paragraph": "Ci Craft is a mobile educational game designed to teach Chinese characters. The game was available as a mini-app on VKontakte and offered a creative approach to learning Chinese writing through a 'craft-a-character' mechanic. The visual style was inspired by ancient China and featured warm orange tones."
+    },
+    "gameplay": {
+      "header": "Gameplay",
+      "paragraph": "The player selected a level — a specific set of characters. The goal was to assemble complex characters using basic Kangxi radicals (the core components of Chinese characters). Radicals scrolled horizontally at the bottom of the screen like a carousel. The player dragged the elements to the work area, and when placed correctly, they combined into a complete character, which was then added to the personal dictionary."
+    },
+    "dictionary": {
+      "header": "Dictionary and learning",
+      "paragraph": "Ci Craft offered a built-in dictionary where users could: view learned characters by level; add characters to personal folders; read short histories about each character's origin. The game helped train memory and visual recognition while forming a personalized reference guide to Chinese symbols."
+    },
+    "audience": {
+      "header": "Target audience",
+      "paragraph": "The game was designed for a broad audience — from schoolchildren to adults wanting to start or refresh their Chinese language knowledge. Its simple interface and engaging approach made it accessible to all ages and skill levels."
+    },
+    "myRole": {
+      "header": "My role in the project",
+      "list": [
+        "Developed the dictionary module and character card interface",
+        "Designed all screen layouts (UI design)",
+        "Fixed gameplay-related bugs",
+        "Set up the admin panel (React + Firebase)"
+      ]
+    },
+    "technicalChallenges": {
+      "header": "Technical challenges",
+      "paragraph": "The project was built on React Ionic and used Firebase for the database. It was also integrated with VK API for social media deployment. One of the main challenges was cross-platform compatibility — iOS-specific limitations related to security and component behavior required custom solutions."
+    },
+    "results": {
+      "header": "Results",
+      "paragraph": "A test launch was conducted among a limited group of VK users. The feedback was positive regarding the idea and visuals, but due to the small number of levels and lack of a full gamified loop, development was halted."
+    },
+    "meaning": {
+      "header": "Project significance",
+      "paragraph": "Ci Craft was my first professional project. It taught me how to work in a team, helped me dive into mobile interface development, and improved my user experience design skills."
+    }
+  },
+  "bretzel": {
+    "aboutProject": {
+      "header": "About the project",
+      "paragraph": "Bretzel is an internal corporate web application developed for employees of a large German company. The main goal was to create a convenient service for ordering food for various corporate events and daily needs. The app supports both mobile and desktop devices, allowing employees to quickly and easily place orders from any device."
+    },
+    "mainFunctionality": {
+      "header": "Main functionality",
+      "paragraph": "The user selects an event type (such as Cafeteria, Breakfast, BBQ, Coffee Break, Finger food, Pizza session), then fills out a form with the location, date, and time. The menu automatically adapts to the selected event. Employees build their cart, pay for the order, and can track its status on a separate page. The second part of the app is for the chef, who can manage the menu, set days off, and update the list of popular delivery locations."
+    },
+    "myRole": {
+      "header": "My role",
+      "paragraph": "I was responsible for the full interface design for both mobile and desktop versions. I also developed key user scenarios: order placement, menu filtering and display, and the product cart."
+    },
+    "technologies": {
+      "header": "Technologies and features",
+      "paragraph": "The app is built with React and MobX for state management. Despite being a SPA, the project was technically complex due to the many conditions and scenarios: correct handling of delivery date and time, order status updates, and dynamic cart and menu updates."
+    },
+    "challenges": {
+      "header": "Challenges and solutions",
+      "paragraph": "One of the main tasks was to ensure correct work with time slots and order statuses, as well as flexible menu filtering and updates depending on the selected event. All these features required careful logic and close collaboration with the backend team."
+    },
+    "results": {
+      "header": "Results",
+      "paragraph": "The app became popular among company employees and is still in use. The client was satisfied and later returned to us with new ideas for future projects."
+    }
+  },
+  "squadReady": {
+    "aboutProject": {
+      "header": "About the project",
+      "paragraph": "Squad Ready IT is a landing page for a company specializing in outsourced software development. The main goal was to attract new clients and showcase the company's portfolio. A lot of work was done on SEO to ensure the site ranks well in search engines."
+    },
+    "mainFunctionality": {
+      "header": "Main functionality",
+      "paragraph": "The site emphasizes the company's ability to take on projects of any complexity and quickly expand the team by hiring additional specialists if needed. The landing page features blocks about past collaborations and showcases completed projects with original preview illustrations."
+    },
+    "myRole": {
+      "header": "My role",
+      "paragraph": "I designed the entire landing page, created illustrations for project previews, and developed the site using Next.js. The whole process—from idea to final implementation—was carried out by me alone."
+    },
+    "technologies": {
+      "header": "Technologies and features",
+      "paragraph": "The site is built with Next.js, React, and the MUI component library. Special attention was paid to a clean, minimalistic interface and smooth animations that make the user experience more engaging."
+    },
+    "challenges": {
+      "header": "Challenges and solutions",
+      "paragraph": "Working on the animations was especially interesting: while there aren't many, they add a unique touch to the site, especially when switching projects during scrolling."
+    },
+    "results": {
+      "header": "Results",
+      "paragraph": "The site received high praise from the company’s management and is still used as Squad Ready IT’s business card. After the successful launch, I was asked to create another similar project."
+    }
+  },
+  "kanxiKeys": {
+    "aboutProject": {
+      "header": "About the project",
+      "paragraph": "The interactive site 'Kangxi Keys Table' is designed for everyone interested in the Chinese language and wishing to explore all 214 main Kangxi radicals. The project combines educational and commercial goals: users can study the radicals and also purchase an illustrated poster with detailed descriptions on Ozon. The site also promotes a VKontakte community with useful content for Chinese learners."
+    },
+    "mainFunctionality": {
+      "header": "Main functionality",
+      "paragraph": "At the heart of the site is a convenient interactive table featuring all 214 Kangxi radicals. Each radical has its own article with history, meaning, and other useful information. There is a fast search by radicals and sorting by the number of strokes, making navigation simple and intuitive. A help button in the lower right corner opens a modal window with interface explanations."
+    },
+    "myRole": {
+      "header": "My role",
+      "paragraph": "I was responsible for the entire site design, aiming to convey the spirit of China through soft light tones and subtle details. I also worked on animations, backend setup, search implementation, sorting by stroke count, and adapting the interface for both mobile and desktop devices."
+    },
+    "technologies": {
+      "header": "Technologies and features",
+      "paragraph": "The site is built with Next.js and uses Firebase as a database. Special attention was paid to loading speed, adaptability, and navigation convenience. Thanks to thoughtful design and a modern interface, the site stands out among similar resources."
+    },
+    "challenges": {
+      "header": "Challenges and solutions",
+      "paragraph": "The project did not present serious difficulties, but it was very interesting in terms of design and interactive elements. I am especially proud of the pleasant atmosphere and the site's real convenience for users."
+    },
+    "results": {
+      "header": "Results",
+      "paragraph": "The site received many positive reviews for its usability and visual design. Users note that working with the table is pleasant and easy. The project was completed in 2022 and is still in use."
+    }
+  },
+  "planyway": {
+    "aboutProject": {
+      "header": "About the project",
+      "paragraph": "Planyway is a large web application for task and time management, integrated with Trello and Jira. The app combines planning, time tracking, and reporting features."
+    },
+    "myContribution": {
+      "header": "My contribution",
+      "subtitle": "I joined the project in 2024 as a frontend developer. During this time, I have:",
+      "list": [
+        "Implemented a new onboarding for users",
+        "Improved the export function for reports in various formats",
+        "Added the 'billable and non-billable hours' parameter to time logs",
+        "Redesigned the main task filtering menu",
+        "Supported integrations with Jira, Trello, and the Chrome extension",
+        "Participated in developing new backend features and fixing bugs (Node.js)"
+      ]
+    },
+    "architecture": {
+      "header": "Architectural improvements",
+      "paragraph": "Introduced the Feature-Sliced Design approach, which helped to structure the project, simplify code navigation, and make it easier to maintain and develop."
+    },
+    "challenges": {
+      "header": "Challenges",
+      "paragraph": "The main challenge was understanding a large amount of legacy code. Step by step, the project is becoming simpler and more modern, making further development easier."
+    }
+  }
+}

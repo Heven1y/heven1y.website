@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from "@storybook/react";
 
 import { JavaScriptIcon } from "@/shared/icons/programingLanguages";
-import { BorderColorsSkills } from "@/shared/models/enums";
+import { Skills } from "@/shared/models/enums";
 
 import SkillElement from "./index";
 
@@ -17,6 +17,6 @@ const Template: StoryFn<typeof SkillElement> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   name: "JavaScript",
-  borderColor: BorderColorsSkills.JavaScript,
+  borderColor: Skills.JavaScript,
   children: <JavaScriptIcon />,
 };

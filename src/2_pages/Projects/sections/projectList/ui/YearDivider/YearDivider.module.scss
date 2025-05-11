@@ -1,0 +1,17 @@
+.year-divider__wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  height: fit-content;
+}
+
+.year-divider__year {
+  @extend .font-simple-2;
+}
+
+.year-divider__divider {
+  background-color: currentColor;
+  flex-shrink: unset;
+}
