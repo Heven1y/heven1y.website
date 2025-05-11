@@ -10,6 +10,7 @@ import {
   ModalHeader,
   Skeleton,
 } from "@heroui/react";
+import classNames from "classnames";
 import { useTranslations } from "next-intl";
 
 import { CloseIcon } from "@/shared/icons/interface";
@@ -69,6 +70,10 @@ export default function Project(props: ProjectProps) {
     }));
   };
 
+  const modalHeaderClass = classNames(styles["project__header"], {
+    [styles["project__header--with-link"]]: data?.link,
+  });
+
   return (
     <Modal
       hideCloseButton
@@ -80,7 +85,7 @@ export default function Project(props: ProjectProps) {
       <ModalContent>
         {(onClose) => (
           <>
-            <ModalHeader className={styles["project__header"]}>
+            <ModalHeader className={modalHeaderClass}>
               {data ? (
                 <h1 className={styles["project__header-title"]}>
                   {data.title}

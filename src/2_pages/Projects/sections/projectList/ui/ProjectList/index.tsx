@@ -76,7 +76,11 @@ export default function ProjectList() {
       projectsByYear.get(year)?.push(project);
     }
 
-    return projectsByYear;
+    const sortedProjectsByYear = new Map(
+      [...projectsByYear.entries()].sort((a, b) => b[0] - a[0]),
+    );
+
+    return sortedProjectsByYear;
   }, [filterCategories, filterTechnologies]);
 
   const getCategoriesToMap = (categories: Categories[]) => {
