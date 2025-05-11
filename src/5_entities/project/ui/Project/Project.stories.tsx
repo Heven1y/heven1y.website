@@ -45,7 +45,7 @@ const mockData: DataProject = {
     },
   ],
   categories: [Categories.Design, Categories.Frontend],
-  stack: [Technologies.React, Technologies.NextJs],
+  stack: [Technologies.ReactSPA, Technologies.NextJs],
 };
 
 const Template: StoryFn<typeof Project> = (args) => <Project {...args} />;
