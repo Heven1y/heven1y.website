@@ -1,7 +1,7 @@
 import React from "react";
 
 import { HeroUIProvider } from "@heroui/react";
-import { Raleway } from "next/font/google";
+import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
@@ -9,9 +9,10 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Languages } from "@/shared/models/enums";
 
-const raleway = Raleway({
-  subsets: ["latin", "cyrillic"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+const tildaSans = localFont({
+  src: "../../6_shared/fonts/TildaSans-VF.woff2",
+  display: "swap",
+  weight: "300 900",
 });
 
 export default async function Layout({
@@ -30,7 +31,7 @@ export default async function Layout({
 
   return (
     <html lang={locale}>
-      <body className={raleway.className}>
+      <body className={tildaSans.className}>
         <HeroUIProvider>
           <NextIntlClientProvider messages={messages}>
             {children}
