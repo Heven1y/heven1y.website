@@ -45,6 +45,10 @@ const config = {
         },
       },
     };
+    config.build = {
+      ...config.build,
+      target: 'esnext',
+    };
     return config;
   },
 };

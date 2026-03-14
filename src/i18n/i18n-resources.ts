@@ -3,35 +3,37 @@ import { glob } from "glob";
 import fs from "fs/promises";
 import path from "path";
 
-type IResources = {
-  [key: string]: {
-    [key: string]: string;
-  };
-};
+import { parseLocalePath } from "./parse-locale-path";
 
-export default async function i18nResources(locale: string) {
-  const resources: IResources = {};
+type Resources = Record<string, Record<string, string>>;
+
+export default async function i18nResources(
+  locale: string,
+): Promise<Resources> {
+  const resources: Resources = {};
 
   const basePath = path.resolve(process.cwd(), "src");
+  const files = glob.sync(`${basePath}/**/local.${locale}.json`);
 
-  const ctx = glob.sync(`${basePath}/**/local.${locale}.json`);
-  const fileRegex =
-    /.*src\/\d*_?(?<slice>\w*)\/?.*\/(?<component>\w+)\/local\.(?<language>\w+)\.json$/;
+  for (const file of files) {
+    const parsed = parseLocalePath(file);
+    if (!parsed) continue;
 
-  for (const file of ctx) {
-    const groups = file.match(fileRegex)?.groups;
-    if (!groups) {
-      continue;
-    }
-    const { slice, component } = groups;
+    const { namespace } = parsed;
 
     try {
       const fileContent = await fs.readFile(file, "utf-8");
       const translations = JSON.parse(fileContent);
 
-      resources[`${slice}_${component}`] = translations;
+      if (resources[namespace]) {
+        console.warn(
+          `[i18n] Namespace collision: "${namespace}" already defined. File: ${file}`,
+        );
+      }
+
+      resources[namespace] = translations;
     } catch (error) {
-      console.error(`Error reading or parsing file: ${file}`, error);
+      console.error(`[i18n] Failed to load locale file: ${file}`, error);
     }
   }
 
