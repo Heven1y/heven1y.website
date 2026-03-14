@@ -63,6 +63,7 @@ export function ContentBuilder({ data }: ContentBuilderProps) {
               >
                 <Image
                   as={NextImage}
+                  fill
                   isBlurred
                   src={section.src}
                   alt={section.alt}

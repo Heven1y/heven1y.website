@@ -45,6 +45,13 @@ const config = {
         },
       },
     };
+    config.resolve = {
+      ...config.resolve,
+      alias: {
+        ...config.resolve?.alias,
+        "next/image": path.resolve(__dirname, "next-image-mock.tsx"),
+      },
+    };
     config.build = {
       ...config.build,
       target: 'esnext',

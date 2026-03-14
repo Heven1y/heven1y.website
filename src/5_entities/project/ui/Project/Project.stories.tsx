@@ -14,27 +14,30 @@ export default {
 } as Meta;
 
 const mockData: DataProject = {
-  title: "Radiant",
-  year: 2025,
-  shortDescription: "short description",
-  colors: [],
+  title: "Radiant Metrics",
+  year: 2023,
+  shortDescription: "radiant.shortDescription",
+  colors: ["#0F0055", "#4B3CFF", "#B4C3FF"],
   link: {
     ref: "https://radiant-metrics.com",
     value: "radiant-metrics.com",
   },
   content: [
     {
-      header: "Introduction",
+      header: "radiant.aboutProject.header",
       sections: [
         {
           type: Sections.Paragraph,
-          content:
-            "Web application for tracking activity on a project (Similar to Tempo).",
+          content: "radiant.aboutProject.paragraph",
         },
         {
           type: Sections.List,
-          subtitle: "Some list",
-          list: ["Item 1", "Item 2", "Item 3"],
+          subtitle: "radiant.calibrationProcess.subheader",
+          list: [
+            "radiant.calibrationProcess.list.0",
+            "radiant.calibrationProcess.list.1",
+            "radiant.calibrationProcess.list.2",
+          ],
         },
         {
           type: Sections.Image,
@@ -44,8 +47,8 @@ const mockData: DataProject = {
       ],
     },
   ],
-  categories: [Categories.Design, Categories.Frontend],
-  stack: [Technologies.ReactSPA, Technologies.NextJs],
+  categories: [Categories.Frontend, Categories.Design],
+  stack: [Technologies.NextJs, Technologies.ReactSPA],
 };
 
 const Template: StoryFn<typeof Project> = (args) => <Project {...args} />;
