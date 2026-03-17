@@ -47,7 +47,7 @@ const preview: Preview = {
       values: [
         {
           name: "default",
-          value: "#121316",
+          value: "#090514",
         },
       ],
     },

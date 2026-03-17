@@ -9,3 +9,19 @@
   padding: 60px 0px;
   z-index: 1;
 }
+
+.preview__title {
+  @extend .font-display-1;
+  white-space: pre-line;
+}
+
+.preview__subheader {
+  @extend .font-simple-2;
+  white-space: pre-line;
+}
+
+.preview__wrapper-header {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
