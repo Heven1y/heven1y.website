@@ -12,7 +12,7 @@ import {
 } from "@heroui/react";
 import { useTranslations } from "next-intl";
 
-import { Tabs } from "@/shared/models/enums";
+import { Pages } from "@/shared/models/enums";
 
 import MenuIcon from "../../icons/Menu";
 
@@ -23,13 +23,13 @@ export default function MenuHeader({
   activeTabId,
   children,
 }: {
-  onClickItem?: (tabId: Tabs) => void;
-  activeTabId: Tabs;
+  onClickItem?: (tabId: Pages) => void;
+  activeTabId: Pages;
   children?: React.ReactNode;
 }) {
   const t = useTranslations("features_MenuHeader");
 
-  const handleClickItem = (tabId: Tabs) => {
+  const handleClickItem = (tabId: Pages) => {
     if (activeTabId === tabId) {
       return;
     }
@@ -59,15 +59,15 @@ export default function MenuHeader({
         >
           <ListboxItem
             className={styles["menu-header__item"]}
-            onPress={() => handleClickItem(Tabs.about)}
-            key={Tabs.about}
+            onPress={() => handleClickItem(Pages.about)}
+            key={Pages.about}
           >
             {t("aboutTitle")}
           </ListboxItem>
           <ListboxItem
             className={styles["menu-header__item"]}
-            onPress={() => handleClickItem(Tabs.projects)}
-            key={Tabs.projects}
+            onPress={() => handleClickItem(Pages.projects)}
+            key={Pages.projects}
           >
             {t("projectsTitle")}
           </ListboxItem>

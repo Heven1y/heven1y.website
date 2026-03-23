@@ -8,6 +8,8 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
 import { Languages } from "@/shared/models/enums";
+import { Container } from "@/shared/ui";
+import { Header } from "@/widgets/header";
 
 const tildaSans = localFont({
   src: "../../6_shared/fonts/TildaSans-VF.woff2",
@@ -34,6 +36,9 @@ export default async function Layout({
       <body className={tildaSans.className}>
         <HeroUIProvider>
           <NextIntlClientProvider messages={messages}>
+            <Container>
+              <Header />
+            </Container>
             {children}
           </NextIntlClientProvider>
         </HeroUIProvider>

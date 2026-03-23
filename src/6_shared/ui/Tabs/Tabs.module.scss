@@ -1,0 +1,47 @@
+.tabs {
+  position: relative;
+  display: inline-flex;
+  border-radius: 30px;
+  outline: $border solid 1px;
+  background-color: $background-ui;
+}
+
+.tabs__indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 100%;
+  border-radius: 30px;
+  border: $divider solid 1px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: $background-ui;
+  pointer-events: none;
+}
+
+.tabs__item {
+  @extend .font-simple-1;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 30px;
+  color: $typography-secondary;
+  background: none;
+  border: none;
+  border-radius: 26px;
+  cursor: pointer;
+  transition: color 0.3s;
+  white-space: nowrap;
+
+  &:hover:not(&--active) {
+    color: $typography-primary;
+  }
+
+  &--active {
+    color: $typography-primary;
+    cursor: default;
+  }
+}

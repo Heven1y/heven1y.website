@@ -52,7 +52,7 @@ export enum Technologies {
   NextJs = "Next.js",
 }
 
-export enum Tabs {
+export enum Pages {
   about = "about",
   projects = "projects",
 }

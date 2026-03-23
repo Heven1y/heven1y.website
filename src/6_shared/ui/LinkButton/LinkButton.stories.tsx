@@ -1,11 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react";
 
-import {
-  GitHubIcon,
-  LinkedInIcon,
-  MailIcon,
-  TelegramIcon,
-} from "@/shared/icons/social";
+import { GitHubIcon, LinkedInIcon, TelegramIcon } from "@/shared/icons/social";
 
 import LinkButton from "./index";
 
@@ -35,11 +30,4 @@ export const Telegram = Template.bind({});
 Telegram.args = {
   link: "https://t.me/Heven1y",
   children: <TelegramIcon />,
-};
-
-export const Mail = Template.bind({});
-
-Mail.args = {
-  link: "mailto:heven1y@outlook.com",
-  children: <MailIcon />,
 };

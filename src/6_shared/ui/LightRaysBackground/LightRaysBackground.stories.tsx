@@ -60,19 +60,3 @@ Default.args = {
   noiseAmount: 0.0,
   distortion: 0.0,
 };
-
-export const WarmSunset = Template.bind({});
-WarmSunset.args = {
-  raysOrigin: "bottom-center",
-  raysColor: "#ff6622",
-  raysSpeed: 0.5,
-  lightSpread: 1.5,
-  rayLength: 2.5,
-  pulsating: true,
-  fadeDistance: 2.0,
-  saturation: 1.5,
-  followMouse: true,
-  mouseInfluence: 0.3,
-  noiseAmount: 0.05,
-  distortion: 0.3,
-};
