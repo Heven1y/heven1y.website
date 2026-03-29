@@ -1,5 +1,5 @@
-import { action } from "@storybook/addon-actions";
 import { Meta, StoryFn } from "@storybook/react";
+import { action } from "storybook/actions";
 
 import { Categories, Technologies } from "@/shared/models/enums";
 
@@ -43,6 +43,8 @@ const mockData: DataProject = {
           type: Sections.Image,
           src: "https://cdn.oneesports.gg/cdn-data/2022/01/GenshinImpact_GordonRamsayRaidenShogunMeme.jpg",
           alt: "Example image",
+          width: 944,
+          height: 530,
         },
       ],
     },

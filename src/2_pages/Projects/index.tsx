@@ -7,10 +7,11 @@ import styles from "./Projects.module.scss";
 import { ProjectList } from "./sections/projectList";
 
 export default async function Projects({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages_Projects" });
   return (
     <>

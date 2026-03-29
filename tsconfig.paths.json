@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@/app/*": ["./src/1_app/*"],
       "@/pages/*": ["./src/2_pages/*"],

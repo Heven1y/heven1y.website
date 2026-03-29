@@ -1,26 +1,27 @@
-/// <reference types="vite/client" />
-
 import { parseLocalePath } from "../src/i18n/parse-locale-path";
 
 type LocaleMessages = Record<string, string>;
 type NamespacedMessages = Record<string, LocaleMessages>;
 type MessagesByLocale = Record<string, NamespacedMessages>;
 
-async function collectLocales(): Promise<MessagesByLocale> {
+function collectLocales(): MessagesByLocale {
   const messagesByLocale: MessagesByLocale = {};
 
-  const files = import.meta.glob<{ default: LocaleMessages }>(
-    "/src/**/local.*.json",
+  const ctx = (require as any).context(
+    "../src",
+    true,
+    /local\.\w+\.json$/,
   );
 
-  for (const filePath in files) {
-    const parsed = parseLocalePath(filePath);
+  for (const filePath of ctx.keys()) {
+    const fullPath = "/src" + filePath.slice(1);
+    const parsed = parseLocalePath(fullPath);
     if (!parsed) continue;
 
     const { namespace, language } = parsed;
 
     try {
-      const localeData = (await files[filePath]()).default;
+      const localeData = ctx(filePath);
 
       if (!messagesByLocale[language]) {
         messagesByLocale[language] = {};
@@ -41,7 +42,7 @@ async function collectLocales(): Promise<MessagesByLocale> {
   return messagesByLocale;
 }
 
-const messagesByLocale = await collectLocales();
+const messagesByLocale = collectLocales();
 
 export const nextIntl = {
   defaultLocale: "en",

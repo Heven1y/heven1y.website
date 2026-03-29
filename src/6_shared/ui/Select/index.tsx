@@ -22,6 +22,7 @@ type PropsSelect = {
   value?: string;
   className?: string;
   classNameItem?: string;
+  ariaLabel?: string;
 };
 
 export default function Select(props: PropsSelect) {
@@ -29,6 +30,7 @@ export default function Select(props: PropsSelect) {
     <Dropdown placement="bottom-end" className={props.className}>
       <DropdownTrigger>{props.children}</DropdownTrigger>
       <DropdownMenu
+        aria-label={props.ariaLabel ?? "Select options"}
         variant="faded"
         selectionMode="single"
         selectedKeys={new Set([props.value ?? ""])}

@@ -1,62 +1,52 @@
-import tsconfigPaths from "vite-tsconfig-paths";
-import react from "@vitejs/plugin-react";
 import path from "path";
-import { NodePackageImporter } from "sass-embedded"
-import { STYLES_GLOBAL_IMPORTS } from "../src/6_shared/styles/stylesModule";
+import { fileURLToPath } from "url";
+import { createRequire } from "module";
+import { NodePackageImporter } from "sass-embedded";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
+
+const STYLES_FILES = ["constant", "mixins"];
+const STYLES_GLOBAL_IMPORTS = STYLES_FILES.map(
+  (name) => `@use "${name}" as *;`,
+).join(" ");
 
 const config = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-    "storybook-addon-mock",
     "storybook-next-intl",
   ],
   framework: {
     name: "@storybook/nextjs",
     options: {},
   },
-  core: {
-    builder: "@storybook/builder-vite",
-  },
-  docs: {},
-  viteFinal: async (config) => {
-    config.plugins.push(
-      tsconfigPaths({
-        projects: [path.resolve(path.dirname(__dirname), "tsconfig.json")],
-      })
+  webpackFinal: async (config: any) => {
+    const sassRule = config.module?.rules?.find(
+      (rule: any) =>
+        rule.test instanceof RegExp && rule.test.test("file.scss"),
     );
-    config.plugins.push(
-      react({
-        jsxRuntime: "automatic",
-      })
-    );
-    config.define = {
-      "process.env": {},
-    };
-    config.css = {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler',
+    if (sassRule?.use) {
+      const sassLoader = sassRule.use.find(
+        (loader: any) =>
+          typeof loader === "object" &&
+          loader.loader &&
+          loader.loader.includes("sass-loader"),
+      );
+      if (sassLoader) {
+        sassLoader.options = {
+          ...sassLoader.options,
+          implementation: require.resolve("sass-embedded"),
           additionalData: STYLES_GLOBAL_IMPORTS,
-          loadPaths: [path.resolve(path.dirname(__dirname), 'src/6_shared/styles')],
-          importers: [new NodePackageImporter()],
-        },
-      },
-    };
-    config.resolve = {
-      ...config.resolve,
-      alias: {
-        ...config.resolve?.alias,
-        "next/image": path.resolve(__dirname, "next-image-mock.tsx"),
-      },
-    };
-    config.build = {
-      ...config.build,
-      target: 'esnext',
-    };
+          sassOptions: {
+            api: "modern-compiler",
+            loadPaths: [path.resolve(__dirname, "../src/6_shared/styles")],
+            importers: [new NodePackageImporter()],
+          },
+        };
+      }
+    }
     return config;
   },
 };
+
 export default config;

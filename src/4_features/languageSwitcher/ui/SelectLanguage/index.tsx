@@ -3,9 +3,9 @@
 import React from "react";
 
 import { Button, Selection } from "@heroui/react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
-import { usePathname, useRouter } from "@/i18n/routing";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { LANGUAGES } from "@/shared/config/constants";
 import { Languages } from "@/shared/models/enums";
 import { Select } from "@/shared/ui";
@@ -26,15 +26,18 @@ export default function SelectLanguage() {
     }
   }
 
+  const translate = useTranslations("features_SelectLanguage");
+
   return (
     <Select
       className={styles["select-language"]}
       value={locale}
       onChange={switchHandler}
       items={LANGUAGES}
+      ariaLabel={translate("selectLabel")}
     >
       <Button
-        aria-label="The button for switching the language"
+        aria-label={translate("buttonLabel")}
         className={styles["select-language__trigger"]}
         variant="light"
       >

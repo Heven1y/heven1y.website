@@ -19,11 +19,12 @@ const tildaSans = localFont({
 
 export default async function Layout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   if (!routing.locales.includes(locale as Languages)) {
     notFound();
   }
@@ -34,8 +35,12 @@ export default async function Layout({
   return (
     <html lang={locale}>
       <body className={tildaSans.className}>
-        <HeroUIProvider>
-          <NextIntlClientProvider messages={messages}>
+        <HeroUIProvider locale={locale}>
+          <NextIntlClientProvider
+            locale={locale}
+            messages={messages}
+            timeZone="Etc/Universal"
+          >
             <Container>
               <Header />
             </Container>

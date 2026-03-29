@@ -4,10 +4,11 @@ import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages_Layout" });
   return {
     title: t("title"),

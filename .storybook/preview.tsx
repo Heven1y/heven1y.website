@@ -1,5 +1,3 @@
-import type { Preview } from "@storybook/react";
-
 import React from "react";
 import { HeroUIProvider } from "@heroui/react";
 import "../src/6_shared/styles/tailwind.css";
@@ -16,13 +14,13 @@ const decorators = [
   },
 ];
 
-const preview: Preview = {
+const preview = {
   initialGlobals: {
-    locale: 'en',
+    locale: "en",
     locales: {
-        en: 'English',
-        ru: 'Русский',
-        ja: '日本語',
+      en: "English",
+      ru: "Русский",
+      ja: "日本語",
     },
   },
   parameters: {
@@ -35,7 +33,6 @@ const preview: Preview = {
         isReady: true,
       },
     },
-    actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -54,6 +51,5 @@ const preview: Preview = {
   },
   decorators,
 };
-
 
 export default preview;

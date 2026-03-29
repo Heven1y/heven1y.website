@@ -4,7 +4,7 @@ import React from "react";
 
 import classNames from "classnames";
 
-import { Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 
 import styles from "./Tabs.module.scss";
 

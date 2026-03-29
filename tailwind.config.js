@@ -1,7 +1,7 @@
 import { heroui } from "@heroui/react";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",

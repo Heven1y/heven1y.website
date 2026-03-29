@@ -63,7 +63,9 @@ export function ContentBuilder({ data }: ContentBuilderProps) {
               >
                 <Image
                   as={NextImage}
-                  fill
+                  className={styles["content-builder__image"]}
+                  width={section.width}
+                  height={section.height}
                   isBlurred
                   src={section.src}
                   alt={section.alt}

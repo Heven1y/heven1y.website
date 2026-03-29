@@ -1,25 +1,16 @@
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
+
+function getWindowWidth() {
+  return typeof window !== "undefined" ? window.innerWidth : 0;
+}
+
+function subscribe(callback: () => void) {
+  window.addEventListener("resize", callback);
+  return () => window.removeEventListener("resize", callback);
+}
 
 function useWindowWidthResize() {
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  useEffect(() => {
-    if (window) {
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-      };
-
-      setWindowWidth(window.innerWidth);
-
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
-  }, []);
-
-  return windowWidth;
+  return useSyncExternalStore(subscribe, getWindowWidth, () => 0);
 }
 
 export default useWindowWidthResize;

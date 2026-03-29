@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 
 import { SelectLanguage } from "@/features/languageSwitcher";
 import { MenuHeader } from "@/features/menuHeader";
-import { usePathname, useRouter } from "@/i18n/routing";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { BREAKPOINT_MINI_LAPTOP_PX } from "@/shared/config/constants";
 import { useWindowWidthResize } from "@/shared/hooks";
 import { GitHubIcon, LinkedInIcon, TelegramIcon } from "@/shared/icons/social";

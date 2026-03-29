@@ -1,8 +1,4 @@
-"use client";
-
 import React from "react";
-
-import Link from "next/link";
 
 import styles from "./LinkButton.module.scss";
 
@@ -14,12 +10,12 @@ type PropsLinkButton = {
 
 export default function LinkButton(props: PropsLinkButton) {
   return (
-    <Link
+    <a
       aria-label={props.ariaLabel}
       href={props.link}
       className={styles["link-button"]}
     >
       {props.children}
-    </Link>
+    </a>
   );
 }

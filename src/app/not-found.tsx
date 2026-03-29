@@ -4,7 +4,7 @@ import NotFound from "@/pages/NotFound";
 
 export default async function GlobalNotFound() {
   return (
-    <Layout params={{ locale: routing.defaultLocale }}>
+    <Layout params={Promise.resolve({ locale: routing.defaultLocale })}>
       <NotFound />
     </Layout>
   );
