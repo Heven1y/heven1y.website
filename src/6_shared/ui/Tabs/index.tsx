@@ -21,8 +21,6 @@ type PropsTabs = {
 };
 
 export default function Tabs(props: PropsTabs) {
-  const TAB_WIDTH = 120;
-
   const activeIndex = props.items.findIndex(
     (item) => item.id === props.activeId,
   );
@@ -31,7 +29,7 @@ export default function Tabs(props: PropsTabs) {
     <nav className={styles.tabs}>
       <div
         className={styles["tabs__indicator"]}
-        style={{ transform: `translateX(${activeIndex * TAB_WIDTH}px)` }}
+        style={{ "--active-index": activeIndex } as React.CSSProperties}
       />
       {props.items.map((item) => (
         <Link

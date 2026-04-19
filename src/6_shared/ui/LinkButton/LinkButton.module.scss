@@ -1,11 +1,13 @@
 .link-button {
+  --link-button-size: 40px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: var(--link-button-size);
+  height: var(--link-button-size);
   color: $primary;
-  border-radius: 32px;
+  border-radius: var(--link-button-size);
   border: $primary solid 1px;
   transition: 0.3s;
   cursor: pointer;
@@ -14,5 +16,17 @@
     box-shadow: $inner-shadow;
     border: $bloom solid 1px;
     color: $bloom;
+  }
+
+  svg {
+    transform: scale(1.2);
+  }
+
+  @include desktop {
+    --link-button-size: 32px;
+    
+    svg {
+      transform: scale(1);
+    }
   }
 }

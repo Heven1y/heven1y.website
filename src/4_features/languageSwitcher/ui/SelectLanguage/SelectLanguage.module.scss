@@ -5,8 +5,8 @@
 .select-language__trigger {
   width: fit-content;
   color: $primary;
-  height: 32px;
-  padding: 0 10px;
+  height: 40px;
+  padding: 0 14px;
   border-radius: $border-radius;
   border: rgba(0, 0, 0, 0) solid 1px;
   min-width: auto;
@@ -17,5 +17,20 @@
     box-shadow: $inner-shadow;
     border: $bloom solid 1px;
     color: $bloom;
+  }
+  
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include desktop {
+    height: 32px;
+    padding: 0 10px;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 }

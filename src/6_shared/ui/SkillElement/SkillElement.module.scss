@@ -2,20 +2,38 @@
   @extend .font-simple-1;
   position: relative;
   width: fit-content;
-  height: 40px;
+  height: 52px;
   padding: 1px;
   border-radius: $border-radius;
+
+  @include desktop {
+    height: 46px;
+  }
+
+  @include laptop {
+    height: 40px;
+  }
 }
 
 .skill-element__inner-block {
   width: fit-content;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   height: 100%;
   background: $skill-bg;
   border-radius: $border-radius;
-  padding: 0 9px;
+  padding: 0 14px;
+
+  @include desktop {
+    gap: 12px;
+    padding: 0 11px;
+  }
+
+  @include laptop {
+    gap: 10px;
+    padding: 0 9px;
+  }
 }
 
 .git {

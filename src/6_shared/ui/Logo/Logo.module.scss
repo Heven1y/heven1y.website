@@ -1,7 +1,14 @@
 .logo {
+  --logo-size: 40px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  svg {
+    width: var(--logo-size);
+    height: var(--logo-size);
+  }
 
   div {
     position: absolute;
@@ -14,10 +21,12 @@
     filter: blur(16px);
   }
 
-  &:hover {
-    div {
-      width: 32px;
-      height: 32px;
-    }
+  &:hover div {
+    width: var(--logo-size);
+    height: var(--logo-size);
+  }
+
+  @include desktop {
+    --logo-size: 32px;
   }
 }

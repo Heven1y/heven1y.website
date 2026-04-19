@@ -1,22 +1,36 @@
 .tabs {
+  --tab-width: 150px;
+  --tab-height: 40px;
+
   position: relative;
   display: inline-flex;
-  border-radius: 30px;
+  border-radius: var(--tab-height);
   outline: $border solid 1px;
   background-color: $background-ui;
+
+  @include desktop {
+    --tab-width: 135px;
+    --tab-height: 34px;
+  }
+
+  @include laptop {
+    --tab-width: 120px;
+    --tab-height: 30px;
+  }
 }
 
 .tabs__indicator {
   position: absolute;
   top: 0;
   left: 0;
-  width: 120px;
+  width: var(--tab-width);
   height: 100%;
-  border-radius: 30px;
+  border-radius: var(--tab-height);
   border: $divider solid 1px;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   background-color: $background-ui;
   pointer-events: none;
+  transform: translateX(calc(var(--tab-width) * var(--active-index, 0)));
 }
 
 .tabs__item {
@@ -26,12 +40,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 120px;
-  height: 30px;
+  width: var(--tab-width);
+  height: var(--tab-height);
   color: $typography-secondary;
   background: none;
   border: none;
-  border-radius: 26px;
+  border-radius: var(--tab-height);
   cursor: pointer;
   transition: color 0.3s;
   white-space: nowrap;
