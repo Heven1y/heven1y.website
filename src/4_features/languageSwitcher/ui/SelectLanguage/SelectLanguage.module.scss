@@ -4,19 +4,18 @@
 
 .select-language__trigger {
   width: fit-content;
-  color: $primary;
+  color: $typography-secondary;
   height: 40px;
   padding: 0 14px;
   border-radius: $border-radius;
-  border: rgba(0, 0, 0, 0) solid 1px;
+  border: transparent solid 1px;
   min-width: auto;
   gap: 5px;
 
   &:hover {
-    background-color: $bg-color;
-    box-shadow: $inner-shadow;
-    border: $bloom solid 1px;
-    color: $bloom;
+    background-color: $background-ui;
+    border: $divider solid 1px;
+    color: $typography-primary;
   }
   
   svg {

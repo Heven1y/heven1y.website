@@ -2,156 +2,143 @@
   @extend .font-simple-1;
   position: relative;
   width: fit-content;
+  display: flex;
+  align-items: center;
   height: 52px;
   padding: 1px;
   border-radius: $border-radius;
-
-  @include desktop {
-    height: 46px;
-  }
-
-  @include laptop {
-    height: 40px;
-  }
-}
-
-.skill-element__inner-block {
-  width: fit-content;
-  display: flex;
-  align-items: center;
   gap: 15px;
-  height: 100%;
-  background: $skill-bg;
-  border-radius: $border-radius;
   padding: 0 14px;
 
   @include desktop {
+    height: 46px;
     gap: 12px;
     padding: 0 11px;
   }
 
   @include laptop {
+    height: 40px;
     gap: 10px;
     padding: 0 9px;
   }
 }
 
 .git {
-  background: #f05033;
+  background: rgba(#f05033, 0.15);
 }
 
 .jira {
-  background: #2580f7;
+  background: rgba(#2580f7, 0.15);
 }
 
 .figma {
   background: linear-gradient(
     90deg,
-    rgba(242, 78, 30, 1) 0%,
-    rgba(255, 114, 98, 1) 25%,
-    rgba(162, 89, 255, 1) 50%,
-    rgba(26, 188, 254, 1) 75%,
-    rgba(10, 207, 131, 1) 100%
+    rgba(242, 78, 30, 0.15) 0%,
+    rgba(255, 114, 98, 0.15) 25%,
+    rgba(162, 89, 255, 0.15) 50%,
+    rgba(26, 188, 254, 0.15) 75%,
+    rgba(10, 207, 131, 0.15) 100%
   );
 }
 
 .bitbucket {
-  background: #2684ff;
+  background: rgba(#2684ff, 0.15);
 }
 
 .android-studio {
-  background: #3ddc84;
+  background: rgba(#3ddc84, 0.15);
 }
 
 .spline {
   background: linear-gradient(
     90deg,
-    rgba(83, 230, 203, 1) 0%,
-    rgba(68, 129, 255, 1) 50%,
-    rgba(255, 58, 243, 1) 100%
+    rgba(83, 230, 203, 0.15) 0%,
+    rgba(68, 129, 255, 0.15) 50%,
+    rgba(255, 58, 243, 0.15) 100%
   );
 }
 
 .tilda {
-  background: #fff;
+  background: $background-ui-hover;
 }
 
 .react {
-  background: #61dafb;
+  background: rgba(#61dafb, 0.15);
 }
 
 .react-native {
-  background: #61dafb;
+  background: rgba(#61dafb, 0.15);
 }
 
 .vue {
-  background: #4fc08d;
+  background: rgba(#4fc08d, 0.15);
 }
 
 .ionic {
-  background: #3880ff;
+  background: rgba(#3880ff, 0.15);
 }
 
 .redux {
-  background: #764abc;
+  background: rgba(#764abc, 0.15);
 }
 
 .mobx {
-  background: #ff9955;
+  background: rgba(#ff9955, 0.15);
 }
 
 .graphql {
-  background: #e10098;
+  background: rgba(#e10098, 0.15);
 }
 
 .firebase {
-  background: #ffca28;
+  background: rgba(#ffca28, 0.15);
 }
 
 .next-js {
-  background: #fff;
+  background: $background-ui-hover;
 }
 
 .react-query {
-  background: #ff4154;
+  background: rgba(#ff4154, 0.15);
 }
 
 .feature-sliced-design {
-  background: #61dafb;
+  background: rgba(#61dafb, 0.15);
 }
 
 .storybook {
-  background: #ff4785;
+  background: rgba(#ff4785, 0.15);
 }
 
 .vite {
-  background: #646cff;
+  background: rgba(#646cff, 0.15);
 }
 
 .java-script {
-  background: #f7df1e;
+  background: rgba(#f7df1e, 0.15);
 }
 
 .typescript {
-  background: #3178c6;
+  background: rgba(#3178c6, 0.15);
 }
 
 .java {
-  background: #ea2d2e;
+  background: rgba(#ea2d2e, 0.15);
 }
 
 .c-sharp {
-  background: #9b4f96;
+  background: rgba(#9b4f96, 0.15);
 }
 
 .english {
-  background: $primary;
+  background: $background-ui-hover;
 }
 
 .russian {
-  background: $primary;
+  background: $background-ui-hover;
 }
 
 .japanese {
-  background: $primary;
+  background: $background-ui-hover;
 }

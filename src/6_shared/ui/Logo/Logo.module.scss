@@ -8,22 +8,25 @@
   svg {
     width: var(--logo-size);
     height: var(--logo-size);
+    color: $typography-primary;
   }
 
   div {
     position: absolute;
-    width: 0px;
-    height: 0px;
-    background-color: rgba(255, 255, 255, 0.5);
+    width: var(--logo-size);
+    height: var(--logo-size);
+    max-width: 0px;
+    max-height: 0px;
+    background-color: $typography-secondary;
     border-radius: 64px;
-    transition: 0.6s;
     display: block;
     filter: blur(16px);
+    transition: 0.6s;
   }
 
   &:hover div {
-    width: var(--logo-size);
-    height: var(--logo-size);
+    max-width: var(--logo-size);
+    max-height: var(--logo-size);
   }
 
   @include desktop {

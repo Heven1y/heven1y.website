@@ -22,10 +22,8 @@ export default function SkillElement({
 
   return (
     <div className={classSkillElement}>
-      <div className={styles["skill-element__inner-block"]}>
-        {children}
-        <p>{name}</p>
-      </div>
+      {children}
+      <p>{name}</p>
     </div>
   );
 }

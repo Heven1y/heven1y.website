@@ -1,27 +1,32 @@
 .chip {
   border-radius: $border-radius;
   background-color: $divider;
-  padding: 0 0.625rem;
-  height: 30px;
+  padding: 0 0.725rem;
+  height: 35px;
   transition: 0.3s;
   border: 1px solid transparent;
   cursor: pointer;
   opacity: 1;
 
   &:hover {
-    border: 1px solid $bloom;
+    border: 1px solid $highlight;
+  }
+
+  @include desktop {
+    height: 30px;
+    padding: 0 0.625rem;
   }
 }
 
 .chip--active {
   @extend .chip;
-  background-color: $bloom;
+  background-color: $highlight;
 }
 
 .chip__content {
   @extend .font-simple-1;
   font-weight: 500;
-  color: $bloom;
+  color: $typography-primary;
   padding: 0;
   cursor: pointer;
   user-select: none;
@@ -30,5 +35,5 @@
 
 .chip__content--active {
   @extend .chip__content;
-  color: $divider;
+  color: $typography-inverse;
 }

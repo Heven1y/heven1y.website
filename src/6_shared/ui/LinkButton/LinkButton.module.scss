@@ -6,16 +6,16 @@
   justify-content: center;
   width: var(--link-button-size);
   height: var(--link-button-size);
-  color: $primary;
+  color: $typography-secondary;
   border-radius: var(--link-button-size);
-  border: $primary solid 1px;
+  border: $border solid 1px;
   transition: 0.3s;
+  background-color: $background-ui;
   cursor: pointer;
 
   &:hover {
-    box-shadow: $inner-shadow;
-    border: $bloom solid 1px;
-    color: $bloom;
+    border: $divider solid 1px;
+    color: $typography-primary;
   }
 
   svg {

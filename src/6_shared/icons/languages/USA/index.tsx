@@ -1,8 +1,9 @@
+import styles from "../../Icons.module.scss";
+
 export default function USAIcon() {
   return (
     <svg
-      width="30"
-      height="22"
+      className={styles["flag-icon"]}
       viewBox="0 0 30 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
