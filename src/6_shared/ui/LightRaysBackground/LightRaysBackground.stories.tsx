@@ -5,6 +5,9 @@ import LightRaysBackground from "./index";
 export default {
   title: "Shared/LightRaysBackground",
   component: LightRaysBackground,
+  parameters: {
+    layout: "fullscreen",
+  },
   argTypes: {
     raysOrigin: {
       control: "select",

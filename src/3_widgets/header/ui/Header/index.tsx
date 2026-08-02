@@ -7,8 +7,7 @@ import { useTranslations } from "next-intl";
 import { SelectLanguage } from "@/features/languageSwitcher";
 import { MenuHeader } from "@/features/menuHeader";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { BREAKPOINT_MINI_LAPTOP_PX } from "@/shared/config/constants";
-import { useWindowWidthResize } from "@/shared/hooks";
+import { useIsDesktop } from "@/shared/hooks";
 import { GitHubIcon, LinkedInIcon, TelegramIcon } from "@/shared/icons/social";
 import { Pages } from "@/shared/models/enums";
 import { LinkButton, Logo, Tabs } from "@/shared/ui";
@@ -19,7 +18,7 @@ import styles from "./Header.module.scss";
 
 export default function Header() {
   const translate = useTranslations("widgets_Header");
-  const windowWidth = useWindowWidthResize();
+  const isDesktop = useIsDesktop();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -48,7 +47,7 @@ export default function Header() {
       <div className={styles["header__logo"]}>
         <Logo />
       </div>
-      {windowWidth >= BREAKPOINT_MINI_LAPTOP_PX && (
+      {isDesktop && (
         <div className={styles["header__tabs"]}>
           <Tabs
             items={[
@@ -68,7 +67,7 @@ export default function Header() {
         </div>
       )}
       <div className={styles["header__actions"]}>
-        {windowWidth >= BREAKPOINT_MINI_LAPTOP_PX ? (
+        {isDesktop ? (
           personLinks
         ) : (
           <MenuHeader onClickItem={navigateTo} activeTabId={activePage}>

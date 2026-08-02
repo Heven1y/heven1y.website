@@ -5,6 +5,7 @@ import LightRaysBackground from "@/shared/ui/LightRaysBackground";
 import { Footer } from "@/widgets/footer";
 
 import styles from "./AboutMe.module.scss";
+import { Bio } from "./sections/bio";
 
 export default async function AboutMe() {
   return (
@@ -16,6 +17,7 @@ export default async function AboutMe() {
         <div className={styles["about-me__content"]}>
           <Container>
             <Preview />
+            <Bio />
             <Skills />
           </Container>
         </div>

@@ -11,6 +11,8 @@ import { Languages } from "@/shared/models/enums";
 import { Container } from "@/shared/ui";
 import { Header } from "@/widgets/header";
 
+import styles from "./Layout.module.scss";
+
 const tildaSans = localFont({
   src: "../../6_shared/fonts/TildaSans-VF.woff2",
   display: "swap",
@@ -41,9 +43,11 @@ export default async function Layout({
             messages={messages}
             timeZone="Etc/Universal"
           >
-            <Container>
-              <Header />
-            </Container>
+            <header className={styles["layout__header"]}>
+              <Container>
+                <Header />
+              </Container>
+            </header>
             {children}
           </NextIntlClientProvider>
         </HeroUIProvider>

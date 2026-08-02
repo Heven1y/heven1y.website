@@ -1,1 +1,1 @@
-export { default as useWindowWidthResize } from "./useWindowWidthResize";
+export { default as useIsDesktop } from "./useIsDesktop";

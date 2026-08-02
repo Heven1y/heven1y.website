@@ -39,21 +39,25 @@
 - Start containers: `make up`
 - Install dependencies in the container: `make install-ui`
 - Start the application: `make run-ui`
-- Start Storybook: `make run-story`
-- Run lint: `npm run lint`
-- Create a production build: `npm run build`
-- Build Storybook: `npm run build-storybook`
 
 ## Verification
 
-- Run `npm run lint` after TypeScript or React changes.
-- Run `npm run build` after routing, configuration, i18n, or
-  production-facing changes.
-- For visual component changes, verify the relevant Storybook story when one
-  exists.
-- The project currently has no automated test script. Do not report tests as
-  passed unless a test command is added and executed.
-- Mention any checks that could not be run and explain why.
+- Never run code verification commands. This includes, but is not limited to,
+  builds, linters, type checks, tests, format checks, Storybook, and development
+  servers used for verification.
+- Do not perform manual runtime or browser verification.
+- The user will review the changes and report any errors.
+- Do not claim that checks passed or describe skipped checks in the final
+  response.
+
+## Code comments
+
+- Never add comments to code, including explanatory comments, TODOs,
+  documentation comments, commented-out code, and comments in example snippets.
+- Write code that is understandable without comments. If an explanation is
+  needed, provide it outside the code block.
+- Preserve pre-existing comments unless removing or changing them is explicitly
+  part of the task.
 
 ## Git safety
 

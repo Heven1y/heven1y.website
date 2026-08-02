@@ -35,7 +35,7 @@ $border-radius: 8px;
     @include desktop {
       min-height: calc(100vh - 100px);
     }
-  
+
     @include laptop {
       min-height: calc(100vh - 80px);
     }
@@ -111,23 +111,23 @@ $border-radius: 8px;
 }
 
 .font-simple-3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 400;
   font-variant-numeric: lining-nums;
-  line-height: 2.25rem;
+  line-height: 2.75rem;
 
   @include desktop {
-    font-size: 1.25rem;
-    line-height: 1.875rem;
+    font-size: 1.75rem;
+    line-height: 2.5rem;
   }
 
   @include laptop {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
   }
 
   @include mobile {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 
@@ -201,5 +201,23 @@ $border-radius: 8px;
 
   @include tablet {
     font-size: 1.1rem;
+  }
+}
+
+.font-header-3 {
+  font-size: 3rem;
+  font-weight: 600;
+  font-variant-numeric: lining-nums;
+
+  @include desktop {
+    font-size: 2.5rem;
+  }
+
+  @include laptop {
+    font-size: 2.25rem;
+  }
+
+  @include tablet {
+      font-size: 1.75rem;
   }
 }

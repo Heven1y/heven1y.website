@@ -1,0 +1,14 @@
+{
+  "summary": {
+    "title": "About",
+    "content": "<p>I enjoy building the part of the web people actually see and interact with every time they open a website or an application.</p><p>If backend developers are the musicians in a band, then frontend is the vocalist – the part the audience actually hears and remembers. From the user’s perspective, this “voice” is what shapes the entire experience of the product.</p><p>I focus on creating fast and lightweight websites and SPA applications with modern and creative design. Most of my work is built with React and Next.js, and I enjoy adding motion and personality to interfaces using GSAP. <highlight>This website, by the way, is built with the same technologies.</highlight></p><p>As a professional Frontend Developer and UI/UX Designer, I can take full ownership of the visual side of a project – from the initial idea to the final interface.</p>"
+  },
+  "frontend": {
+    "title": "Frontend",
+    "content": "<p>I started my frontend career in 2021 after completing an internship at Purrweb. Since then, I have worked on commercial products including Radiant Metrics and Planyway. For the past two years, I have been developing Planyway and gradually migrating a large legacy application from Angular and JavaScript to React and TypeScript.</p><p>During this time, I have worked on calendars, timelines, filtering systems, reports, charts, workload planning, and other complex interfaces. I have built reusable components, virtualized lists, PDF, CSV and XLSX exports, API integrations, and performance improvements.</p><p>My work goes beyond writing code. I participate in requirements discussions, technical planning, risk assessment, and code reviews. I can take a feature from the initial idea all the way to release.</p>"
+  },
+  "design": {
+    "title": "Design",
+    "content": "<p>I have been designing commercial interfaces since 2021, often combining the roles of designer and frontend developer. Later, I studied interface design at Bureau Gorbunov, while most of my experience came from real projects, continuous practice, and feedback.</p><p>For me, design starts with understanding the product domain and its users: who they are, what they need to accomplish, and how they interact with the interface. Only then do I move on to structure, visual hierarchy, typography, and other visual decisions.</p><p>My frontend experience helps me design interfaces that can actually be built. I consider component states, responsive behavior, and technical constraints from the beginning, and I also have experience creating UI kits for large applications.</p>"
+  }
+}

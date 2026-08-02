@@ -1,0 +1,18 @@
+.bio-section {
+  height: 100vh;
+  display: flex;
+  align-items: top;
+  padding: 160px 0;
+
+  @include desktop {
+    padding: 140px 0;
+  }
+
+  @include laptop {
+    padding: 120px 0;
+  }
+
+  @include mini-laptop {
+    height: fit-content;
+  }
+}
