@@ -24,9 +24,7 @@ export default {
         },
         dark: {
           layout: {},
-          colors: {
-            background: "#090514",
-          },
+          colors: {},
         },
       },
     }),

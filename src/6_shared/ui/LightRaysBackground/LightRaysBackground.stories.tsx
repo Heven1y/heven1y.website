@@ -34,7 +34,14 @@ export default {
   },
   decorators: [
     (Story) => (
-      <div style={{ width: "100%", height: "100vh", background: "#0a0a0a" }}>
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100dvh",
+          background: "#0a0a0a",
+        }}
+      >
         <Story />
       </div>
     ),

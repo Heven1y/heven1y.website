@@ -4,14 +4,22 @@ import { Container } from "@/shared/ui";
 import LightRaysBackground from "@/shared/ui/LightRaysBackground";
 import { Footer } from "@/widgets/footer";
 
+import styles from "./AboutMe.module.scss";
+
 export default async function AboutMe() {
   return (
     <>
-      <LightRaysBackground />
-      <Container>
-        <Preview />
-        <Skills />
-      </Container>
+      <main className={styles["about-me"]}>
+        <div className={styles["about-me__light-layer"]}>
+          <LightRaysBackground />
+        </div>
+        <div className={styles["about-me__content"]}>
+          <Container>
+            <Preview />
+            <Skills />
+          </Container>
+        </div>
+      </main>
       <Footer />
     </>
   );
