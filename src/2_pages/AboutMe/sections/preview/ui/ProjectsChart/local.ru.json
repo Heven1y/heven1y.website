@@ -1,0 +1,7 @@
+{
+  "title": "Проекты",
+  "interactionHint": "Наведите",
+  "accessibleTitle": "Проекты по годам",
+  "accessibleDescription": "Накопительное количество завершённых проектов по активным годам",
+  "pointLabel": "{year}: всего завершено проектов — {total}"
+}

@@ -1,0 +1,7 @@
+{
+  "title": "Projects",
+  "interactionHint": "ホバー",
+  "accessibleTitle": "年別プロジェクト",
+  "accessibleDescription": "プロジェクトがある年ごとの累積完了プロジェクト数",
+  "pointLabel": "{year}年：完了したプロジェクトは合計{total}件"
+}

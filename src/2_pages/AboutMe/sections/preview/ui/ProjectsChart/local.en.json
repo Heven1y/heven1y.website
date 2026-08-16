@@ -1,0 +1,7 @@
+{
+  "title": "Projects",
+  "interactionHint": "Hover",
+  "accessibleTitle": "Projects by year",
+  "accessibleDescription": "Cumulative number of completed projects grouped by active years",
+  "pointLabel": "{year}: {total} completed projects in total"
+}

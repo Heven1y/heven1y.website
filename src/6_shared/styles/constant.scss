@@ -131,6 +131,39 @@ $border-radius: 8px;
   }
 }
 
+.font-chart-1 {
+  font-size: 1.8rem;
+  font-weight: 100;
+
+  @include desktop {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+
+  @include laptop {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+
+  @include mobile {
+    font-size: 1rem;
+  }
+}
+
+.font-caption-1 {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.3;
+
+  @include desktop {
+    font-size: 0.75rem;
+  }
+
+  @include laptop {
+    font-size: 0.625rem;
+  }
+}
+
 .font-display-1 {
   font-size: 6.5rem;
   text-box-trim: trim-both;

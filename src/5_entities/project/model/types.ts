@@ -41,3 +41,9 @@ export type DataProject = {
   categories: Categories[];
   stack: Technologies[];
 };
+
+export type ProjectChartPoint = {
+  year: number;
+  total: number;
+  projects: Pick<DataProject, "title" | "shortDescription">[];
+};

@@ -5,14 +5,16 @@ import React from "react";
 import { useTranslations } from "next-intl";
 
 import { CardProject } from "@/entities/cardProject";
-import { Project } from "@/entities/project";
-import { Tags } from "@/entities/project/model/enums";
-import { DataProject } from "@/entities/project/model/types";
+import {
+  dataProjects,
+  type DataProject,
+  Project,
+  Tags,
+} from "@/entities/project";
 import { FilterByTags } from "@/features/filterByTags";
 import { useMapState } from "@/shared/hooks/useMapState";
 import { Categories, Technologies } from "@/shared/models/enums";
 
-import { dataProjects } from "../../model/dataProjects";
 import YearDivider from "../YearDivider";
 
 import styles from "./ProjectList.module.scss";
@@ -30,7 +32,7 @@ export default function ProjectList() {
     null,
   );
 
-  const t = useTranslations("pages_ProjectList");
+  const t = useTranslations("entities_Project");
 
   const { map: filterCategories, set: setCategory } = useMapState<
     Categories,

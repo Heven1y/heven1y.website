@@ -1,6 +1,7 @@
-import { Sections } from "@/entities/project/model/enums";
-import { DataProject } from "@/entities/project/model/types";
 import { Categories, Technologies } from "@/shared/models/enums";
+
+import { Sections } from "./enums";
+import type { DataProject } from "./types";
 
 export const dataProjects: DataProject[] = [
   {
